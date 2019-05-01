@@ -1,21 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package projeto_java_bd;
-
-/**
- *
- * @author Nicole Escobar
- */
 public class Projeto_Java_BD {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int estado = 0;
+        Cadastro c1 = new Cadastro();
+        c1.setNome("Nicole");
+        c1.setSenha("123");
+        c1.setSexo(true);
+        
+        switch (estado) {
+            case 0:
+                c1.Info();
+                break;
+            case 1:
+                
+            default:
+                throw new AssertionError();
+        }
+            
     }
     
 }
