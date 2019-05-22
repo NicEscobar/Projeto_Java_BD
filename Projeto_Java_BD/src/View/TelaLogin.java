@@ -17,6 +17,7 @@ public class TelaLogin extends javax.swing.JFrame {
      * Creates new form TelaLogin
      */
     public TelaLogin() {
+       
         initComponents();
     }
 
@@ -173,6 +174,8 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        TelaLogin1 t2 = new TelaLogin1();
+        t2.setVisible(true);
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
