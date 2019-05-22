@@ -161,11 +161,15 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
-        // TODO add your handling code here:
+            
     }//GEN-LAST:event_txtLoginActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(txtLogin.getText().equals("Usuario")&& txtSenha.getText().equals("1234")){
+        
+        String usuario = "admin";
+        String senha = "admin";
+        
+        if(txtLogin.getText().equals(usuario)&& txtSenha.getText().equals(senha)){
             JOptionPane.showMessageDialog(null,"Bem Vindo");
         }
         else{
@@ -174,8 +178,9 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        TelaLogin1 t2 = new TelaLogin1();
+        TelaCadastro t2 = new TelaCadastro();
         t2.setVisible(true);
+        this.dispose();
         
     }//GEN-LAST:event_jButton3ActionPerformed
 

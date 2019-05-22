@@ -11,14 +11,13 @@ import javax.swing.JOptionPane;
  *
  * @author Aguinaldo
  */
-public class TelaLogin1 extends javax.swing.JFrame {
+public class TelaCadastro extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaLogin
      */
-    public TelaLogin1() {
-        TelaLogin t1 = new TelaLogin();
-        t1.setVisible(false);
+    public TelaCadastro() {
+
         initComponents();
     }
 
@@ -39,19 +38,22 @@ public class TelaLogin1 extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        txtLogin = new javax.swing.JTextField();
-        txtSenha = new javax.swing.JPasswordField();
+        nome = new javax.swing.JTextField();
+        senha1 = new javax.swing.JPasswordField();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        cadastrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        txtSenha1 = new javax.swing.JPasswordField();
+        senha2 = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        cancelar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        txtSenha2 = new javax.swing.JPasswordField();
+        email = new javax.swing.JTextField();
 
         jLabel2.setText("jLabel2");
 
@@ -75,19 +77,24 @@ public class TelaLogin1 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 255, 255)));
         jPanel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        txtLogin.setBackground(new java.awt.Color(69, 73, 73));
-        txtLogin.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        txtLogin.setForeground(new java.awt.Color(255, 255, 255));
-        txtLogin.setCaretColor(new java.awt.Color(69, 73, 74));
-        txtLogin.addActionListener(new java.awt.event.ActionListener() {
+        nome.setBackground(new java.awt.Color(69, 73, 73));
+        nome.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        nome.setForeground(new java.awt.Color(255, 255, 255));
+        nome.setCaretColor(new java.awt.Color(69, 73, 74));
+        nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLoginActionPerformed(evt);
+                nomeActionPerformed(evt);
             }
         });
 
-        txtSenha.setBackground(new java.awt.Color(69, 73, 73));
-        txtSenha.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        txtSenha.setForeground(new java.awt.Color(255, 255, 255));
+        senha1.setBackground(new java.awt.Color(69, 73, 73));
+        senha1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        senha1.setForeground(new java.awt.Color(255, 255, 255));
+        senha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                senha1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,13 +106,13 @@ public class TelaLogin1 extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Projeto de Java e MySQL");
 
-        jButton3.setBackground(new java.awt.Color(21, 21, 21));
-        jButton3.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("CADASTRAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cadastrar.setBackground(new java.awt.Color(21, 21, 21));
+        cadastrar.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 12)); // NOI18N
+        cadastrar.setForeground(new java.awt.Color(255, 255, 255));
+        cadastrar.setText("CADASTRAR");
+        cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cadastrarActionPerformed(evt);
             }
         });
 
@@ -113,12 +120,12 @@ public class TelaLogin1 extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("EMAIL:");
 
-        txtSenha1.setBackground(new java.awt.Color(69, 73, 73));
-        txtSenha1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        txtSenha1.setForeground(new java.awt.Color(255, 255, 255));
-        txtSenha1.addActionListener(new java.awt.event.ActionListener() {
+        senha2.setBackground(new java.awt.Color(69, 73, 73));
+        senha2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        senha2.setForeground(new java.awt.Color(255, 255, 255));
+        senha2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenha1ActionPerformed(evt);
+                senha2ActionPerformed(evt);
             }
         });
 
@@ -126,13 +133,13 @@ public class TelaLogin1 extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("CONFIRMAR SENHA:");
 
-        jButton4.setBackground(new java.awt.Color(21, 21, 21));
-        jButton4.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("CANCELAR");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        cancelar.setBackground(new java.awt.Color(21, 21, 21));
+        cancelar.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 12)); // NOI18N
+        cancelar.setForeground(new java.awt.Color(255, 255, 255));
+        cancelar.setText("CANCELAR");
+        cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                cancelarActionPerformed(evt);
             }
         });
 
@@ -140,9 +147,15 @@ public class TelaLogin1 extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SENHA:");
 
-        txtSenha2.setBackground(new java.awt.Color(69, 73, 73));
-        txtSenha2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        txtSenha2.setForeground(new java.awt.Color(255, 255, 255));
+        email.setBackground(new java.awt.Color(69, 73, 73));
+        email.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        email.setForeground(new java.awt.Color(255, 255, 255));
+        email.setCaretColor(new java.awt.Color(69, 73, 74));
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,29 +167,28 @@ public class TelaLogin1 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jButton3)
+                                    .addComponent(cadastrar)
                                     .addGap(27, 27, 27)
-                                    .addComponent(jButton4))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel8))))
+                                    .addComponent(cancelar))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1)
+                                    .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel8)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7))))
+                                .addComponent(jLabel7)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtSenha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSenha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(senha1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(senha2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -189,23 +201,23 @@ public class TelaLogin1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtSenha2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(senha1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(senha2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(cadastrar)
+                    .addComponent(cancelar))
                 .addContainerGap())
         );
 
@@ -224,22 +236,45 @@ public class TelaLogin1 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
+    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLoginActionPerformed
+    }//GEN-LAST:event_nomeActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
+       
+       //salvar informações no banco
+       if(senha1.getText().equals(senha2.getText())){
+           String nomebanco = nome.getText();
+           String emailbanco = email.getText();
+           String senhabanco = senha1.getText();
+           
+           TelaLogin t1 = new TelaLogin();
+           t1.setVisible(true);
+           this.dispose(); 
+       }else{
+           JOptionPane.showMessageDialog(null, "ERRO - Senhas diferentes");
+       }
+        
+       
+    }//GEN-LAST:event_cadastrarActionPerformed
+
+    private void senha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senha2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_senha2ActionPerformed
 
-    private void txtSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenha1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenha1ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
         TelaLogin t1 = new TelaLogin();
         t1.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_cancelarActionPerformed
+
+    private void senha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senha1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_senha1ActionPerformed
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -258,29 +293,35 @@ public class TelaLogin1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLogin1().setVisible(true);
+                new TelaCadastro().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JButton cadastrar;
+    private javax.swing.JButton cancelar;
+    private javax.swing.JTextField email;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JColorChooser jColorChooser1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -295,9 +336,8 @@ public class TelaLogin1 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtLogin;
-    private javax.swing.JPasswordField txtSenha;
-    private javax.swing.JPasswordField txtSenha1;
-    private javax.swing.JPasswordField txtSenha2;
+    private javax.swing.JTextField nome;
+    private javax.swing.JPasswordField senha1;
+    private javax.swing.JPasswordField senha2;
     // End of variables declaration//GEN-END:variables
 }
