@@ -35,7 +35,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         txtLogin = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        entrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -67,13 +67,13 @@ public class TelaLogin extends javax.swing.JFrame {
         txtSenha.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(21, 21, 21));
-        jButton1.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("ENTRAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        entrar.setBackground(new java.awt.Color(21, 21, 21));
+        entrar.setFont(new java.awt.Font("Copperplate Gothic Bold", 1, 12)); // NOI18N
+        entrar.setForeground(new java.awt.Color(255, 255, 255));
+        entrar.setText("ENTRAR");
+        entrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                entrarActionPerformed(evt);
             }
         });
 
@@ -115,7 +115,7 @@ public class TelaLogin extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(entrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3))
                             .addComponent(txtLogin)
@@ -140,7 +140,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(entrar)
                     .addComponent(jButton3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -164,18 +164,22 @@ public class TelaLogin extends javax.swing.JFrame {
             
     }//GEN-LAST:event_txtLoginActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
         
         String usuario = "admin";
         String senha = "admin";
         
         if(txtLogin.getText().equals(usuario)&& txtSenha.getText().equals(senha)){
-            JOptionPane.showMessageDialog(null,"Bem Vindo");
+           TelaLogin1 t3 = new TelaLogin1();
+           t3.setVisible(true);
+           this.dispose(); 
         }
         else{
             JOptionPane.showMessageDialog(null,"Acesso Negado");
+            txtLogin.setText("");
+            txtSenha.setText("");
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_entrarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         TelaCadastro t2 = new TelaCadastro();
@@ -220,7 +224,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton entrar;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;

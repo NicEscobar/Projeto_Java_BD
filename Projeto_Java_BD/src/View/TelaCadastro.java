@@ -6,6 +6,7 @@
 package View;
 
 import javax.swing.JOptionPane;
+import DAO.UsuarioDAO;
 
 /**
  *
@@ -248,11 +249,19 @@ public class TelaCadastro extends javax.swing.JFrame {
            String emailbanco = email.getText();
            String senhabanco = senha1.getText();
            
+           
+           
+           JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+           
            TelaLogin t1 = new TelaLogin();
            t1.setVisible(true);
            this.dispose(); 
        }else{
            JOptionPane.showMessageDialog(null, "ERRO - Senhas diferentes");
+           nome.setText("");
+           email.setText("");
+           senha1.setText("");
+           senha2.setText("");
        }
         
        
@@ -340,4 +349,5 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JPasswordField senha1;
     private javax.swing.JPasswordField senha2;
     // End of variables declaration//GEN-END:variables
+
 }
