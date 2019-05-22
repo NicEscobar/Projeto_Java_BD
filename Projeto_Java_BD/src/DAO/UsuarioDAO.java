@@ -87,7 +87,7 @@ public class UsuarioDAO {
             //referenciando o objeto pst
             pst = con.prepareStatement(sql);
             //vou substituir o ?. 1 significa que é a 1° ? e o novoUsuario é o que vai ser substituido por ela
-            pst.setInt(1, id);
+            //pst.setInt(1, id);
             pst.execute();
 
             sucess = true;

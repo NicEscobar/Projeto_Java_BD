@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projeto_java_bd;
+package estoque;
 
 /**
  *
- * @author Aguinaldo
+ * @author Tulio
  */
-public class Cabelo extends Modificar{
+public class ListarEstoque {
     
 }
