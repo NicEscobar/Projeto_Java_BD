@@ -9,7 +9,7 @@ package projeto_java_bd;
  *
  * @author Nicole Escobar
  */
-public class Personalizacao {
+public class Customizacao {
     
     private String cor, variacao;
 

@@ -11,4 +11,32 @@ package projeto_java_bd;
  */
 public class Corpo {
     
+    private String cor;
+    private boolean sexo;
+
+    
+    public Corpo(String cor, boolean sexo){
+        
+        this.cor = cor;
+        this.sexo = sexo;
+        
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public boolean isSexo() {
+        return sexo;
+    }
+
+    public void setSexo(boolean sexo) {
+        this.sexo = sexo;
+    }
+    
+    
 }

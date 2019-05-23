@@ -9,11 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import projeto_java_bd.Personagem;
+import projeto_java_bd.Usuario;
 
 
-
-public class PersonagemDAO {
+public class CustomizaDAO {
     
     //objeto responsável pela conexão com o Banco
     public Connection con;
@@ -24,34 +23,27 @@ public class PersonagemDAO {
     //objeto que referencia a tabela gerada em uma busca
     public ResultSet rs;
     
-    
-    //private static final String DRIVER = "com.mysql.jdbc.Driver"; //Caminho da classe Driver, que esta na biblioteca com.mysql.jdbc
-    private static final String URL = "jdbc:mysql://localhost:3306/mydb"+ "?useTimezone=true&serverTimezone=UTC&useSSL=false"; //colocar o nome do banco
-    private static final String USER = "root";
-    private static final String PASS = "root";
-    
     public boolean sucess;
     
-    ConexaoDAO daoC = new ConexaoDAO();
+     ConexaoDAO daoC = new ConexaoDAO();
      
      //Função para inserir um usuário no banco de dados
-     public boolean insertPersonagem() {
+     public boolean insert() {
 
-        
-        String sql = "INSERT INTO personagem (nomePersonagem, personagem_idUsuario, personagem_idCorpo) values (?,?,?);";
-        
+     
+        String sql = "INSERT INTO Usuario(nomeUsuario, senha, sexo, email ) values (?, ?, ?, ?);";
+       
         //Chamo o método que faz a conexão
         con = daoC.connectionToDb();
 
         try {
             //referenciando o objeto pst
             pst = con.prepareStatement(sql);
- 
-            pst.setString(1, "Maria"); //nome do personagem
-            pst.setInt(2, 1);//id do usuario
-            pst.setInt(3, 1);//id do corpo
-            
-            
+            //vou substituir o ?. 1 significa que é a 1° ? e o novoUsuario é o que vai ser substituido por ela
+            pst.setString(1, "Nic");
+            pst.setString(2, "123");
+            pst.setBoolean(3, true);
+            pst.setString(4, "nic@");
             pst.execute();
 
             sucess = true;
@@ -73,11 +65,11 @@ public class PersonagemDAO {
         return sucess;
     }
      
-     public boolean deletarPersonagem() {
+     public boolean deletarUsuario() {
 
         //Inserindo usuario no banco, usando a linguagem sql na string. 
         //A ? varia com o valor desejado
-        String sql = "DELETE from personagem where idPersonagem = ?";
+        String sql = "DELETE from Usuario where idUsuario = ?";
         //Chamo o método que faz a conexão
         con = daoC.connectionToDb();
 
@@ -107,29 +99,30 @@ public class PersonagemDAO {
         return sucess;
     }
      
-     public ArrayList<Personagem> buscarPersonagemo() {
+     public ArrayList<Usuario> buscarUsuariosSemFiltro() {
         
-        ArrayList<Personagem> listaDeUsuarios = new ArrayList<>();
+        ArrayList<Usuario> listaDeUsuarios = new ArrayList<>();
 
-        //Chamo o método que faz a conexão
         con = daoC.connectionToDb();
 
-        String sql = "SELECT * FROM personagem";
+        String sql = "SELECT * FROM usuario";
 
         try {
             
             st = con.createStatement();
             rs = st.executeQuery(sql);
-            System.out.println("Lista de personagens: ");
+            System.out.println("Lista de usuarios: ");
             while(rs.next())
             {
-                Personagem personagemTemp = new Personagem(rs.getString("nomePersonagem"),rs.getInt("idPersonagem"));
+                Usuario usuarioTemp = new Usuario(rs.getString("nomeUsuario"),rs.getString("senha"),rs.getString("email"));
                 
-                System.out.println("Nome = "+personagemTemp.getNomeP());
+                System.out.println("Nome = "+usuarioTemp.getNome());
+                System.out.println("Senha = "+usuarioTemp.getSenha());
+                System.out.println("Email = "+usuarioTemp.getEmail());
                 
                 System.out.println("---------------------------------");
                 
-                listaDeUsuarios.add(personagemTemp);
+                listaDeUsuarios.add(usuarioTemp);
                 
             }
             sucess = true;

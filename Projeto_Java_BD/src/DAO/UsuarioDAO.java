@@ -4,7 +4,6 @@
 package DAO;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,38 +23,18 @@ public class UsuarioDAO {
     //objeto que referencia a tabela gerada em uma busca
     public ResultSet rs;
     
-    
-    //private static final String DRIVER = "com.mysql.jdbc.Driver"; //Caminho da classe Driver, que esta na biblioteca com.mysql.jdbc
-    private static final String URL = "jdbc:mysql://localhost:3306/mydb"+ "?useTimezone=true&serverTimezone=UTC&useSSL=false"; //colocar o nome do banco
-    private static final String USER = "root";
-    private static final String PASS = "root";
-    
     public boolean sucess;
     
-    //Função para fazer a conexão com o banco de dados
-     public boolean connectionToDb(){
-        
-        try {
-            //DriveManager.getConnection retorna uma variavel do tipo connection
-            con = DriverManager.getConnection(URL, USER, PASS); 
-            sucess = true;
-        } catch (SQLException ex) {
-            System.out.println("Error = "+ex.getMessage());
-            sucess = false;
-        }
-        
-        return sucess;
-    }
+     ConexaoDAO daoC = new ConexaoDAO();
      
      //Função para inserir um usuário no banco de dados
      public boolean insert() {
 
-        //Inserindo usuario no banco, usando a linguagem sql na string. 
-        //A ? varia
+     
         String sql = "INSERT INTO Usuario(nomeUsuario, senha, sexo, email ) values (?, ?, ?, ?);";
-        //String sql1 = "INSERT INTO Usuario(senha) values (?)";
+       
         //Chamo o método que faz a conexão
-        connectionToDb();
+        con = daoC.connectionToDb();
 
         try {
             //referenciando o objeto pst
@@ -92,7 +71,7 @@ public class UsuarioDAO {
         //A ? varia com o valor desejado
         String sql = "DELETE from Usuario where idUsuario = ?";
         //Chamo o método que faz a conexão
-        connectionToDb();
+        con = daoC.connectionToDb();
 
         try {
             //referenciando o objeto pst
@@ -124,7 +103,7 @@ public class UsuarioDAO {
         
         ArrayList<Usuario> listaDeUsuarios = new ArrayList<>();
 
-        connectionToDb();
+        con = daoC.connectionToDb();
 
         String sql = "SELECT * FROM usuario";
 
