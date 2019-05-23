@@ -70,9 +70,9 @@ public class CorpoDAO {
 
         //Inserindo usuario no banco, usando a linguagem sql na string. 
         //A ? varia com o valor desejado
-        String sql = "DELETE from Usuario where idUsuario = ?";
+        String sql = "DELETE from corpo where idCorpo = ?";
         //Chamo o método que faz a conexão
-        daoC.connectionToDb();
+        con = daoC.connectionToDb();
 
         try {
             //referenciando o objeto pst

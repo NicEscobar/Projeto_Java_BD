@@ -27,7 +27,7 @@ public class Projeto_Java_BD {
         //Inserindo usuario
         //boolean deuCerto = usuarioDAO.insert();
         //boolean deuCerto = personagemDAO.insertPersonagem();
-        boolean deuCerto = corpoDAO.inserirCorpo();
+        boolean deuCerto = corpoDAO.deletarUsuario();
         //Excluindo usuario
         //boolean deuCerto = usuarioDAO.deletarUsuario();
         //Buscar usuario
