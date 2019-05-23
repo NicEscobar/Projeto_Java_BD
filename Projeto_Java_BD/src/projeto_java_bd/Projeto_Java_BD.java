@@ -25,20 +25,17 @@ public class Projeto_Java_BD {
         CorpoDAO corpoDAO = new CorpoDAO();
         
         //Inserindo usuario
-        //boolean deuCerto = usuarioDAO.insert();
+        boolean deuCerto = usuarioDAO.inserirUsuario();
         //boolean deuCerto = personagemDAO.insertPersonagem();
         //boolean deuCerto = corpoDAO.inserirCorpo();
         //Excluindo usuario
         //boolean deuCerto = usuarioDAO.deletarUsuario();
         //Buscar usuario
+        
+         usuarioDAO.buscarUsuario();
          //ArrayList<Usuario> lista = usuarioDAO.buscarUsuariosSemFiltro();
-        ArrayList<Corpo> lista = corpoDAO.buscarUsuariosSemFiltro();
         
-         
-        
-        
-        
-        //if(deuCerto)
+        if(deuCerto)
             System.out.println("Inserção feita com sucesso!");
     }   
 }

@@ -20,7 +20,7 @@ public class Usuario {
         this.nome = nome;
         this.senha = senha;
         this.email = email;
-        this.sexo = sexo;
+        //this.sexo = sexo;
     }
 
     public String getNome() {
