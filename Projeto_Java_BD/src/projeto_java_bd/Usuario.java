@@ -11,16 +11,12 @@ package projeto_java_bd;
  */
 public class Usuario {
     private String nome;
-    private String senha;
+    private int senha;
     private String email;
     private boolean sexo;
     
-    public Usuario(String nome, String senha, String email){
+    public Usuario(){
         
-        this.nome = nome;
-        this.senha = senha;
-        this.email = email;
-        //this.sexo = sexo;
     }
 
     public String getNome() {
@@ -31,11 +27,11 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public String getSenha() {
+    public int getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
+    public void setSenha(int senha) {
         this.senha = senha;
     }
 

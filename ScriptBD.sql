@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`personagem` (
   INDEX `fk_Personagem_Corpo1_idx` (`personagem_idCorpo` ASC) VISIBLE,
   CONSTRAINT `fk_Personagem_Corpo1`
     FOREIGN KEY (`personagem_idCorpo`)
-    REFERENCES `mydb`.`corpo` (`idCorpo`),
+    REFERENCES `mydb`.`corpo` (`idCorpo`) on delete cascade,
   CONSTRAINT `fk_Personagem_Usuario1`
     FOREIGN KEY (`personagem_idUsuario`)
     REFERENCES `mydb`.`usuario` (`idUsuario`))

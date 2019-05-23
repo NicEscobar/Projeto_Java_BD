@@ -187,13 +187,13 @@ public class ConexaoDAO {
             {             
                 if(tabela.equals("Usuario")){
 
-                    Usuario usuarioTemp = new Usuario(rs.getString("nomeUsuario"),rs.getString("senha"),rs.getString("email"));
+                    //Usuario usuarioTemp = new Usuario(rs.getString("nomeUsuario"),rs.getInt("senha"),rs.getString("email"));
 
-                    System.out.println("Nome = "+usuarioTemp.getNome());
-                    System.out.println("Senha = "+usuarioTemp.getSenha());
-                    System.out.println("Email = "+usuarioTemp.getEmail());
+                   // System.out.println("Nome = "+usuarioTemp.getNome());
+                   // System.out.println("Senha = "+usuarioTemp.getSenha());
+                   // System.out.println("Email = "+usuarioTemp.getEmail());
 
-                    listaTemp.add(usuarioTemp);
+                   // listaTemp.add(usuarioTemp);
                }
                else if(tabela.equals("Personagem")){
                     pst.setString(1, "Maria"); //nome do personagem

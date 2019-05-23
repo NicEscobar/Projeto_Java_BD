@@ -6,6 +6,7 @@ import DAO.UsuarioDAO;
 
 import View.TelaLogin;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /*Criar um Usuario primeiro.
   Criar um Corpo antes de criar o personagem.
@@ -18,21 +19,26 @@ public class Projeto_Java_BD {
         TelaLogin t1 = new TelaLogin();
         t1.setVisible(true);
         
+        boolean deuCerto = false;
+        
         //Criando um novo usuario
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Scanner teclado = new Scanner(System.in);
+        String nomeU = teclado.next();
+        int senhaU = teclado.nextInt();
+        String emailU = teclado.next();
         
-        PersonagemDAO personagemDAO = new PersonagemDAO();
-        CorpoDAO corpoDAO = new CorpoDAO();
         
-        //Inserindo usuario
-        boolean deuCerto = usuarioDAO.inserirUsuario();
-        //boolean deuCerto = personagemDAO.insertPersonagem();
-        //boolean deuCerto = corpoDAO.inserirCorpo();
-        //Excluindo usuario
-        //boolean deuCerto = usuarioDAO.deletarUsuario();
-        //Buscar usuario
         
-         usuarioDAO.buscarUsuario();
+        Usuario usuario = new Usuario();
+        
+        usuario.setNome(nomeU);
+        usuario.setSenha(senhaU);
+        usuario.setEmail(emailU);
+        
+        
+        
+        
+         //usuarioDAO.buscarUsuario();
          //ArrayList<Usuario> lista = usuarioDAO.buscarUsuariosSemFiltro();
         
         if(deuCerto)
