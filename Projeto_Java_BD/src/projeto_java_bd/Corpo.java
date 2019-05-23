@@ -15,10 +15,10 @@ public class Corpo {
     private boolean sexo;
 
     
-    public Corpo(String cor, boolean sexo){
+    public Corpo(String cor){
         
         this.cor = cor;
-        this.sexo = sexo;
+        //this.sexo = sexo;
         
     }
 

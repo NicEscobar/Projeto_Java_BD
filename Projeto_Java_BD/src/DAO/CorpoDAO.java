@@ -56,7 +56,7 @@ public class CorpoDAO {
         }
         finally {         
             try{                 
-                fecharBanco(); 
+                daoC.fecharBanco(); 
             }  
             catch (SQLException ex) {           
                 System.out.println("Erro ao fechar a conexão: " + ex.getMessage());
@@ -66,59 +66,25 @@ public class CorpoDAO {
         return sucess;
     }
      
-     public boolean deletarUsuario() {
-
-        //Inserindo usuario no banco, usando a linguagem sql na string. 
-        //A ? varia com o valor desejado
-        String sql = "DELETE from corpo where idCorpo = ?";
-        //Chamo o método que faz a conexão
-        con = daoC.connectionToDb();
-
-        try {
-            //referenciando o objeto pst
-            pst = con.prepareStatement(sql);
-            //vou substituir o ?. 1 significa que é a 1° ? e o novoUsuario é o que vai ser substituido por ela
-            pst.setInt(1, 2);
-            pst.execute();
-
-            sucess = true;
-
-        } catch (SQLException ex) {
-            System.out.println("Error = " + ex.getMessage());
-            sucess = false;
-        } 
-        
-        finally {         
-            try{                 
-                fecharBanco(); 
-            }  
-            catch (SQLException ex) {           
-                System.out.println("Erro ao fechar a conexão: " + ex.getMessage());
-            }
-        }
-
-        return sucess;
-    }
-     
      public ArrayList<Corpo> buscarUsuariosSemFiltro() {
         
         ArrayList<Corpo> listaDeUsuarios = new ArrayList<>();
 
-        daoC.connectionToDb();
+        con = daoC.connectionToDb();
 
-        String sql = "SELECT * FROM usuario";
+        String sql = "SELECT * FROM corpo";
 
         try {
             
             st = con.createStatement();
             rs = st.executeQuery(sql);
-            System.out.println("Lista de usuarios: ");
+           
             while(rs.next())
             {
-                Corpo usuarioTemp = new Corpo(rs.getString("cor"),rs.getBoolean("true"));
+                Corpo usuarioTemp = new Corpo(rs.getString("cor"));
                 
-                System.out.println("Nome = "+usuarioTemp.getCor());
-                System.out.println("Senha = "+usuarioTemp.isSexo());
+                System.out.println("Cor = "+usuarioTemp.getCor());
+                //System.out.println("Sexo = "+usuarioTemp.isSexo());
                 
                 
                 System.out.println("---------------------------------");
@@ -135,7 +101,7 @@ public class CorpoDAO {
             
         } finally {
             try {
-                fecharBanco();
+                daoC.fecharBanco();
             } catch (SQLException ex) {
                 System.out.println("Erro = " + ex.getMessage());
             }
@@ -144,13 +110,5 @@ public class CorpoDAO {
 
         return listaDeUsuarios;
     }
-     
-     public void fecharBanco() throws SQLException{
-        
-         if (con != null) {
-                    con.close();
-                }
-                if (pst != null)    
-                    pst.close();
-     }
+      
 }
