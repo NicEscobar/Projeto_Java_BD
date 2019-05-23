@@ -52,7 +52,7 @@ public class PersonagemDAO {
 
         //Inserindo personagem no banco, usando a linguagem sql na string. 
         //A ? varia
-        String sql = "INSERT INTO Personagem(nomePersonagem,personagem_idUsuario, personagem_idCorpo) values (?,?,?);";
+        String sql = "INSERT INTO personagem(nomePersonagem, idPersonagem) values (?,?);";
         //String sql1 = "INSERT INTO Usuario(senha) values (?)";
         //Chamo o método que faz a conexão
         connectionToDb();
@@ -63,7 +63,7 @@ public class PersonagemDAO {
             //vou substituir o ?. 1 significa que é a 1° ? e o novoUsuario é o que vai ser substituido por ela
             pst.setString(1, "Mario");
             pst.setInt(2, 1);
-            pst.setInt(3, 1);
+            //pst.setInt(3, 1);
             
             pst.execute();
 
@@ -135,7 +135,7 @@ public class PersonagemDAO {
             System.out.println("Lista de personagens: ");
             while(rs.next())
             {
-                Personagem personagemTemp = new Personagem(rs.getString("nomePersonagem"));
+                Personagem personagemTemp = new Personagem(rs.getString("nomePersonagem"),rs.getInt("idPersonagem"));
                 
                 System.out.println("Nome = "+personagemTemp.getNomeP());
                 

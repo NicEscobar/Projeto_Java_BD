@@ -12,10 +12,13 @@ package projeto_java_bd;
 public class Personagem {
       
     private String nomeP;
+    private int id;
     
-    public Personagem(String nomeP){  
+    public Personagem(String nomeP, int id){  
         
-        this.nomeP = nomeP;   
+        this.nomeP = nomeP; 
+        this.id = id; 
+        
     }
 
     public String getNomeP() {
