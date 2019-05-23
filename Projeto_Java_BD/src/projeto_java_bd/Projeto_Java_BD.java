@@ -11,7 +11,7 @@ public class Projeto_Java_BD {
         
         //Interface
         TelaLogin t1 = new TelaLogin();
-        t1.setVisible(false);
+        t1.setVisible(true);
         
         //Criando um novo usuario
         UsuarioDAO usuarioDAO = new UsuarioDAO();
