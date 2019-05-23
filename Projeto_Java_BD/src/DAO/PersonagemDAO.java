@@ -10,10 +10,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import projeto_java_bd.Usuario;
+import projeto_java_bd.Personagem;
 
 
-public class UsuarioDAO {
+public class PersonagemDAO {
     
     //objeto responsável pela conexão com o Banco
     public Connection con;
@@ -48,11 +48,11 @@ public class UsuarioDAO {
     }
      
      //Função para inserir um usuário no banco de dados
-     public boolean insert() {
+     public boolean insertPersonagem() {
 
-        //Inserindo usuario no banco, usando a linguagem sql na string. 
+        //Inserindo personagem no banco, usando a linguagem sql na string. 
         //A ? varia
-        String sql = "INSERT INTO Usuario(nomeUsuario, senha, sexo, email ) values (?, ?, ?, ?);";
+        String sql = "INSERT INTO Personagem(nomePersonagem,personagem_idUsuario, personagem_idCorpo) values (?,?,?);";
         //String sql1 = "INSERT INTO Usuario(senha) values (?)";
         //Chamo o método que faz a conexão
         connectionToDb();
@@ -61,10 +61,10 @@ public class UsuarioDAO {
             //referenciando o objeto pst
             pst = con.prepareStatement(sql);
             //vou substituir o ?. 1 significa que é a 1° ? e o novoUsuario é o que vai ser substituido por ela
-            pst.setString(1, "Nic");
-            pst.setString(2, "123");
-            pst.setBoolean(3, true);
-            pst.setString(4, "nic@");
+            pst.setString(1, "Mario");
+            pst.setInt(2, 1);
+            pst.setInt(3, 1);
+            
             pst.execute();
 
             sucess = true;
@@ -86,11 +86,11 @@ public class UsuarioDAO {
         return sucess;
     }
      
-     public boolean deletarUsuario() {
+     public boolean deletarPersonagem() {
 
         //Inserindo usuario no banco, usando a linguagem sql na string. 
         //A ? varia com o valor desejado
-        String sql = "DELETE from Usuario where idUsuario = ?";
+        String sql = "DELETE from personagem where idPersonagem = ?";
         //Chamo o método que faz a conexão
         connectionToDb();
 
@@ -120,30 +120,28 @@ public class UsuarioDAO {
         return sucess;
     }
      
-     public ArrayList<Usuario> buscarUsuariosSemFiltro() {
+     public ArrayList<Personagem> buscarPersonagemo() {
         
-        ArrayList<Usuario> listaDeUsuarios = new ArrayList<>();
+        ArrayList<Personagem> listaDeUsuarios = new ArrayList<>();
 
         connectionToDb();
 
-        String sql = "SELECT * FROM usuario";
+        String sql = "SELECT * FROM personagem";
 
         try {
             
             st = con.createStatement();
             rs = st.executeQuery(sql);
-            System.out.println("Lista de usuarios: ");
+            System.out.println("Lista de personagens: ");
             while(rs.next())
             {
-                Usuario usuarioTemp = new Usuario(rs.getString("nomeUsuario"),rs.getString("senha"),rs.getString("email"));
+                Personagem personagemTemp = new Personagem(rs.getString("nomePersonagem"));
                 
-                System.out.println("Nome = "+usuarioTemp.getNome());
-                System.out.println("Senha = "+usuarioTemp.getSenha());
-                System.out.println("Email = "+usuarioTemp.getEmail());
+                System.out.println("Nome = "+personagemTemp.getNomeP());
                 
                 System.out.println("---------------------------------");
                 
-                listaDeUsuarios.add(usuarioTemp);
+                listaDeUsuarios.add(personagemTemp);
                 
             }
             sucess = true;

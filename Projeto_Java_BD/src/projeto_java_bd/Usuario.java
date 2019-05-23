@@ -15,7 +15,8 @@ public class Usuario {
     private String email;
     private boolean sexo;
     
-    public Usuario(String nome,String senha, String email, boolean sexo){
+    public Usuario(String nome, String senha, String email){
+        
         this.nome = nome;
         this.senha = senha;
         this.email = email;
@@ -46,7 +47,7 @@ public class Usuario {
         this.email = email;
     }
 
-    public boolean isSexo() {
+    public boolean getSexo() {
         return sexo;
     }
 
