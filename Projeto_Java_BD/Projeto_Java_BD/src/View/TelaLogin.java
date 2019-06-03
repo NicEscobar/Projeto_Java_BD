@@ -81,7 +81,7 @@ public class TelaLogin extends javax.swing.JFrame {
         txtSenha.setBounds(550, 220, 180, 30);
 
         entrar.setBackground(new java.awt.Color(234, 234, 234));
-        entrar.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        entrar.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         entrar.setForeground(new java.awt.Color(25, 24, 28));
         entrar.setText("ENTRAR");
         entrar.setBorder(null);
@@ -96,13 +96,13 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(entrar);
         entrar.setBounds(590, 280, 110, 30);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(82, 82, 171));
         jLabel3.setText("SENHA");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(550, 200, 51, 21);
+        jLabel3.setBounds(550, 200, 60, 17);
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(82, 82, 171));
         jLabel4.setText("LOGIN");
         jPanel1.add(jLabel4);
@@ -112,14 +112,14 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(540, 40, 251, 41);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 24, 28));
         jLabel1.setText("Projeto de Java e MySQL");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(550, 90, 170, 20);
 
         jButton3.setBackground(new java.awt.Color(234, 234, 234));
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(200, 87, 87));
         jButton3.setText("Ou clique aqui para cadastrar");
         jButton3.setBorder(null);
@@ -131,7 +131,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(560, 320, 180, 18);
+        jButton3.setBounds(540, 320, 210, 14);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wpppp.png"))); // NOI18N
         jLabel6.setText("jLabel6");

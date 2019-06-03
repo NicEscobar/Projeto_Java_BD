@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  *
  * @author Aguinaldo
  */
-public class TelaCadastro1 extends javax.swing.JFrame {
+public class TelaInicial1 extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaLogin
      */
-    public TelaCadastro1() {
+    public TelaInicial1() {
        
         initComponents();
     }
@@ -33,20 +33,28 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        txtLogin = new javax.swing.JTextField();
-        txtSenha = new javax.swing.JPasswordField();
-        txtLogin1 = new javax.swing.JTextField();
-        txtLogin2 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         entrar1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         entrar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -63,122 +71,6 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 255, 255)));
         jPanel1.setLayout(null);
 
-        txtLogin.setBackground(new java.awt.Color(234, 255, 91));
-        txtLogin.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtLogin.setForeground(new java.awt.Color(82, 82, 171));
-        txtLogin.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtLogin.setBorder(null);
-        txtLogin.setCaretColor(new java.awt.Color(69, 73, 74));
-        txtLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLoginActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtLogin);
-        txtLogin.setBounds(550, 270, 180, 30);
-
-        txtSenha.setBackground(new java.awt.Color(234, 255, 91));
-        txtSenha.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtSenha.setForeground(new java.awt.Color(82, 82, 171));
-        txtSenha.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtSenha.setBorder(null);
-        jPanel1.add(txtSenha);
-        txtSenha.setBounds(550, 220, 180, 30);
-
-        txtLogin1.setBackground(new java.awt.Color(234, 255, 91));
-        txtLogin1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtLogin1.setForeground(new java.awt.Color(82, 82, 171));
-        txtLogin1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtLogin1.setBorder(null);
-        txtLogin1.setCaretColor(new java.awt.Color(69, 73, 74));
-        txtLogin1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLogin1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtLogin1);
-        txtLogin1.setBounds(550, 330, 180, 30);
-
-        txtLogin2.setBackground(new java.awt.Color(234, 255, 91));
-        txtLogin2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtLogin2.setForeground(new java.awt.Color(82, 82, 171));
-        txtLogin2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtLogin2.setBorder(null);
-        txtLogin2.setCaretColor(new java.awt.Color(69, 73, 74));
-        txtLogin2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLogin2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtLogin2);
-        txtLogin2.setBounds(550, 160, 180, 30);
-
-        entrar1.setBackground(new java.awt.Color(234, 234, 234));
-        entrar1.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
-        entrar1.setForeground(new java.awt.Color(25, 24, 28));
-        entrar1.setText("CANCELAR");
-        entrar1.setBorder(null);
-        entrar1.setBorderPainted(false);
-        entrar1.setContentAreaFilled(false);
-        entrar1.setFocusPainted(false);
-        entrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entrar1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(entrar1);
-        entrar1.setBounds(660, 370, 110, 20);
-
-        jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(82, 82, 171));
-        jLabel9.setText("EMAIL:");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(550, 310, 60, 20);
-
-        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(82, 82, 171));
-        jLabel7.setText("CONFIRMAR SENHA:");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(550, 250, 160, 20);
-
-        entrar.setBackground(new java.awt.Color(234, 234, 234));
-        entrar.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
-        entrar.setForeground(new java.awt.Color(25, 24, 28));
-        entrar.setText("CADASTRAR");
-        entrar.setBorder(null);
-        entrar.setBorderPainted(false);
-        entrar.setContentAreaFilled(false);
-        entrar.setFocusPainted(false);
-        entrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entrarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(entrar);
-        entrar.setBounds(540, 370, 130, 20);
-
-        jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(82, 82, 171));
-        jLabel3.setText("SENHA:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(550, 200, 60, 17);
-
-        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(82, 82, 171));
-        jLabel4.setText("NOME:");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(550, 140, 61, 24);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(540, 40, 251, 41);
-
-        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(25, 24, 28));
-        jLabel1.setText("Projeto de Java e MySQL");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(550, 90, 170, 20);
-
         jButton1.setBackground(new java.awt.Color(234, 234, 234));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-exit-50.png"))); // NOI18N
         jButton1.setBorder(null);
@@ -190,22 +82,163 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(730, 0, 40, 40);
 
+        entrar1.setBackground(new java.awt.Color(234, 234, 234));
+        entrar1.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        entrar1.setForeground(new java.awt.Color(25, 24, 28));
+        entrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-move-right-male-50.png"))); // NOI18N
+        entrar1.setText("PROX.");
+        entrar1.setBorder(null);
+        entrar1.setBorderPainted(false);
+        entrar1.setContentAreaFilled(false);
+        entrar1.setFocusPainted(false);
+        entrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entrar1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(entrar1);
+        entrar1.setBounds(650, 310, 110, 50);
+
+        jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-trash-can-50.png"))); // NOI18N
+        jLabel9.setText("EXCLUIR PERSONAGEM");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(490, 260, 250, 40);
+
+        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-female-user-50.png"))); // NOI18N
+        jLabel7.setText("ALTERAR PERSONAGEM");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(490, 200, 241, 40);
+
+        entrar.setBackground(new java.awt.Color(234, 234, 234));
+        entrar.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        entrar.setForeground(new java.awt.Color(25, 24, 28));
+        entrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-move-left-female-50.png"))); // NOI18N
+        entrar.setText("ANT.");
+        entrar.setBorder(null);
+        entrar.setBorderPainted(false);
+        entrar.setContentAreaFilled(false);
+        entrar.setFocusPainted(false);
+        entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(entrar);
+        entrar.setBounds(540, 310, 100, 50);
+
+        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-purposeful-man-50.png"))); // NOI18N
+        jLabel4.setText("CRIAR PERSONAGEM");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(490, 150, 230, 40);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(540, 40, 251, 41);
+
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(25, 24, 28));
+        jLabel1.setText("Projeto de Java e MySQL");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(550, 90, 170, 20);
+
+        jPanel3.setBackground(new java.awt.Color(234, 255, 91));
+        jPanel3.setLayout(null);
+
+        jPanel5.setBackground(new java.awt.Color(234, 234, 234));
+        jPanel5.setLayout(null);
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/#28.png"))); // NOI18N
+        jPanel5.add(jLabel18);
+        jLabel18.setBounds(40, 30, 140, 310);
+
+        jLabel10.setFont(new java.awt.Font("Georgia", 1, 20)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(60, 63, 65));
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-people-50.png"))); // NOI18N
+        jLabel10.setText("Aparência");
+        jPanel5.add(jLabel10);
+        jLabel10.setBounds(0, 0, 170, 50);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19e30add-7434-40f0-a0e0-5bbff8db1a82.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel5.add(jLabel3);
+        jLabel3.setBounds(-40, -10, 300, 360);
+
+        jPanel3.add(jPanel5);
+        jPanel5.setBounds(20, 40, 180, 330);
+
+        jPanel6.setBackground(new java.awt.Color(234, 234, 234));
+        jPanel6.setLayout(null);
+
+        jLabel17.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel17.setText("Curso :");
+        jPanel6.add(jLabel17);
+        jLabel17.setBounds(0, 244, 60, 20);
+
+        jLabel15.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel15.setText("Passatempos:");
+        jPanel6.add(jLabel15);
+        jLabel15.setBounds(0, 200, 98, 20);
+
+        jLabel16.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel16.setText("Comida Pref.:");
+        jPanel6.add(jLabel16);
+        jLabel16.setBounds(0, 150, 100, 30);
+
+        jLabel14.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel14.setText("Telefone:");
+        jPanel6.add(jLabel14);
+        jLabel14.setBounds(0, 110, 70, 20);
+
+        jLabel13.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel13.setText("Nome:");
+        jPanel6.add(jLabel13);
+        jLabel13.setBounds(0, 70, 60, 20);
+
+        jLabel12.setFont(new java.awt.Font("Georgia", 1, 20)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(60, 63, 65));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-compose-50.png"))); // NOI18N
+        jLabel12.setText("Informações");
+        jPanel6.add(jLabel12);
+        jLabel12.setBounds(10, 0, 200, 40);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19e30add-7434-40f0-a0e0-5bbff8db1a82.jpg"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        jPanel6.add(jLabel11);
+        jLabel11.setBounds(-50, 0, 270, 330);
+
+        jPanel3.add(jPanel6);
+        jPanel6.setBounds(230, 40, 220, 330);
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wpppp.png"))); // NOI18N
-        jLabel6.setText("jLabel6");
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(0, 0, 600, 390);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(3, 3, 479, 398);
+        jPanel2.setBounds(3, 3, 480, 388);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -234,16 +267,12 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
-
-    }//GEN-LAST:event_txtLoginActionPerformed
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
 
@@ -261,14 +290,6 @@ public class TelaCadastro1 extends javax.swing.JFrame {
             txtSenha.setText("");
         }
     }//GEN-LAST:event_entrarActionPerformed
-
-    private void txtLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLogin1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtLogin1ActionPerformed
-
-    private void txtLogin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLogin2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtLogin2ActionPerformed
 
     private void entrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar1ActionPerformed
         // TODO add your handling code here:
@@ -295,14 +316,18 @@ public class TelaCadastro1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicial1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicial1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicial1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastro1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaInicial1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -311,7 +336,7 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastro1().setVisible(true);
+                new TelaInicial1().setVisible(true);
             }
         });
     }
@@ -322,6 +347,15 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -332,10 +366,9 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField txtLogin;
-    private javax.swing.JTextField txtLogin1;
-    private javax.swing.JTextField txtLogin2;
-    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     // End of variables declaration//GEN-END:variables
 }
