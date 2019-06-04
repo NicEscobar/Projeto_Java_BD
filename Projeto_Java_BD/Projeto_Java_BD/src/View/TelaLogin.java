@@ -40,7 +40,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        cadastro = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -118,20 +118,20 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(550, 90, 170, 20);
 
-        jButton3.setBackground(new java.awt.Color(234, 234, 234));
-        jButton3.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(200, 87, 87));
-        jButton3.setText("Ou clique aqui para cadastrar");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        cadastro.setBackground(new java.awt.Color(234, 234, 234));
+        cadastro.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        cadastro.setForeground(new java.awt.Color(200, 87, 87));
+        cadastro.setText("Ou clique aqui para cadastrar");
+        cadastro.setBorder(null);
+        cadastro.setBorderPainted(false);
+        cadastro.setContentAreaFilled(false);
+        cadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                cadastroActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(540, 320, 210, 14);
+        jPanel1.add(cadastro);
+        cadastro.setBounds(540, 320, 210, 14);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wpppp.png"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -184,11 +184,11 @@ public class TelaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        TelaCadastro t2 = new TelaCadastro();
+    private void cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroActionPerformed
+        TelaCadastro1 t2 = new TelaCadastro1();
         t2.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_cadastroActionPerformed
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
 
@@ -196,7 +196,7 @@ public class TelaLogin extends javax.swing.JFrame {
         String senha = "admin";
 
         if(txtLogin.getText().equals(usuario)&& txtSenha.getText().equals(senha)){
-            TelaInicial t3 = new TelaInicial();
+            TelaInicial1 t3 = new TelaInicial1();
             t3.setVisible(true);
             this.dispose();
         }
@@ -247,9 +247,9 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cadastro;
     private javax.swing.JButton entrar;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -3,6 +3,8 @@
  */
 package DAO;
 
+import projeto_java_bd.Usuario;
+
 public class UsuarioDAO {
      
     public boolean sucess;
@@ -10,9 +12,9 @@ public class UsuarioDAO {
      ConexaoDAO daoC = new ConexaoDAO();
      
      //Função para inserir um usuário no banco de dados
-     public boolean inserirUsuario() {
+     public boolean inserirUsuario(Usuario a) {
          
-         sucess = daoC.inserir("Usuario");
+         sucess = daoC.inserir(a);
          return sucess;
      }    
      

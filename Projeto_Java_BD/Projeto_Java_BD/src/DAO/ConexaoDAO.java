@@ -66,9 +66,10 @@ public class ConexaoDAO {
          
      }  
     
-    public boolean inserir(String tabela) {  
+    public boolean inserir(Object o) {  
         
-        if(tabela.equals("Usuario")){
+        sql = "INSERT INTO usuario(nomeUsuario, senha, sexo, email ) values (?, ?, ?, ?);";
+       /* if(tabela.equals("Usuario")){
             sql = "INSERT INTO usuario(nomeUsuario, senha, sexo, email ) values (?, ?, ?, ?);";
         }
         else if(tabela.equals("Personagem"))
@@ -80,7 +81,7 @@ public class ConexaoDAO {
         else
             sql = "";
         //Chamo o método que faz a conexão
-        
+        */
         connectionToDb();
 
         try {
@@ -88,7 +89,15 @@ public class ConexaoDAO {
             //referenciando o objeto pst
             pst = con.prepareStatement(sql);
             
-           if(tabela.equals("Usuario")){
+            Usuario u1 = new Usuario();
+            u1 = (Usuario) o;
+            
+             pst.setString(1, u1.getNome());
+             pst.setString(2, u1.getSenha());
+             pst.setBoolean(3, true);
+             pst.setString(4, u1.getEmail());
+            
+           /*if(tabela.equals("Usuario")){
                 pst.setString(1, "Teste2");
                 pst.setString(2, "1233");
                 pst.setBoolean(3, true);
@@ -102,7 +111,7 @@ public class ConexaoDAO {
            else if(tabela.equals("Corpo")){
                 pst.setString(1, "verde");
                 pst.setBoolean(2, false);
-           }
+           }*/
            
             pst.execute();
             sucess = true;

@@ -23,9 +23,9 @@ public class Projeto_Java_BD {
         
         //Criando um novo usuario
         Scanner teclado = new Scanner(System.in);
-        String nomeU = teclado.next();
-        int senhaU = teclado.nextInt();
-        String emailU = teclado.next();
+        String nomeU = teclado.nextLine();
+        String senhaU = teclado.nextLine();
+        String emailU = teclado.nextLine();
         
         
         
