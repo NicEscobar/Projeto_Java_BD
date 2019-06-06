@@ -20,6 +20,7 @@ public class Slider extends javax.swing.JFrame {
      * Creates new form Slider
      */
     private CardLayout cardLayout;
+    
     void initImage(){
         String[] filesName = {"#1.png","#2.png","#3.png","#4.png","#5.png","#6.png",
         "#7.png","#8.png","#9.png","#10.png","#11.png","#12.png","#13.png",
@@ -79,7 +80,7 @@ public class Slider extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPrevious);
-        btnPrevious.setBounds(470, 350, 76, 32);
+        btnPrevious.setBounds(470, 350, 71, 23);
 
         btnNext.setText("Proximo");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +89,7 @@ public class Slider extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnNext);
-        btnNext.setBounds(480, 190, 78, 32);
+        btnNext.setBounds(480, 190, 71, 23);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

@@ -11,32 +11,23 @@ package projeto_java_bd;
  */
 public class Corpo {
     
-    private String cor;
-    private boolean sexo;
+    private String id;
+    private int numeroO;
 
-    
-    public Corpo(String cor){
-        
-        this.cor = cor;
-        //this.sexo = sexo;
-        
+    public String getId() {
+        return id;
     }
 
-    public String getCor() {
-        return cor;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setCor(String cor) {
-        this.cor = cor;
+    public int getNumeroO() {
+        return numeroO;
     }
 
-    public boolean isSexo() {
-        return sexo;
+    public void setNumeroO(int numeroO) {
+        this.numeroO = numeroO;
     }
-
-    public void setSexo(boolean sexo) {
-        this.sexo = sexo;
-    }
-    
     
 }

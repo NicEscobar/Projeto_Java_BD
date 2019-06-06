@@ -13,18 +13,28 @@ import DAO.PersonagemDAO;
  */
 public class Personagem {
       
-    private String nomeP;
-    private int id;
+    private String nomeP, id, idade;
+    private int corpoId;
+  
     
     PersonagemDAO daoP = new PersonagemDAO();
     
-    public Personagem(String nomeP, int id){  
+    public Corpo corpo = new Corpo();
+    public Objeto obj = new Objeto();
+    
+    public Personagem(){  
         
-        
+       corpo = new Corpo();
+       obj = new Objeto();
+    
     }
 
-    public Personagem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int getCorpoId() {
+        return corpoId;
+    }
+
+    public void setCorpoId(int corpoId) {
+        this.corpoId = corpoId;
     }
 
     public String getNomeP() {
@@ -35,21 +45,29 @@ public class Personagem {
         this.nomeP = nomeP;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
+    }
     
-    public void inserirUsuario(Personagem p){
+    public void inserirPersonagem(Personagem p){
         
         daoP.inserirPersonagem(p);
         
     };
     
-    public void deletarUsuario(int id){
+    public void deletarPersonagem(int id){
         
         daoP.deletarPersonagem(id);
         

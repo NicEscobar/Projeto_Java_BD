@@ -28,7 +28,7 @@ public class PersonagemDAO {
      
     public void inserirPersonagem(Personagem p) {
        
-        sql = "INSERT INTO personagem (nomePersonagem, personagem_idCorpo) values (?,?,?);";
+        sql = "INSERT INTO personagem (nomePersonagem, idadePersonagem, usuario_idUsuario, ) values (?,?,?);";
         
        con = daoP.connectionToDb();
        
@@ -37,7 +37,7 @@ public class PersonagemDAO {
         //referenciando o objeto pst
         pst = con.prepareStatement(sql);
             
-        pst.setString(1, p.getNomeP());
+        //pst.setString(1, p.getNomeP());
         
          pst.execute();
          
@@ -55,7 +55,7 @@ public class PersonagemDAO {
        public void deletarPersonagem (int id) {
        
         
-        sql = "DELETE from usuario where idUsuario = ?";
+        sql = "DELETE from personagem where idUsuario = ?";
        
        
         daoP.connectionToDb();
@@ -81,13 +81,12 @@ public class PersonagemDAO {
     }
     
         public boolean buscarPersonagem(String usuario, String senhaUsuario) {
-        
-         ArrayList<Personagem> listaTemp = new ArrayList<>();
+         //ArrayList<Usuario> listaTemp = new ArrayList<>();
          
         con = daoP.connectionToDb();
  
            
-        sql = "SELECT * FROM usuario";
+        sql = "SELECT * FROM personagem";
         
         try {
             
@@ -95,20 +94,16 @@ public class PersonagemDAO {
             rs = st.executeQuery(sql);
             
             while(rs.next())
-            {             
+            {     
+                String emailBanco = rs.getString("email");
+                String senhaBanco = rs.getString("senha");
                 
-
-                    //Usuario usuarioTemp = new Usuario(rs.getString("nomeUsuario"),rs.getInt("senha"),rs.getString("email"));
-
-                   // System.out.println("Nome = "+usuarioTemp.getNome());
-                   // System.out.println("Senha = "+usuarioTemp.getSenha());
-                   // System.out.println("Email = "+usuarioTemp.getEmail());
-
-                   // listaTemp.add(usuarioTemp);
-               
-               
-            }   
-         
+                if((emailBanco.equals(usuario))&&(senhaBanco.equals(senhaUsuario))){
+                    
+                    return true;
+                }
+                  
+            }       
 
         } catch (SQLException ex) {
             
@@ -121,6 +116,5 @@ public class PersonagemDAO {
 
         }
         return false;
-    }
-    
+        }   
 }
