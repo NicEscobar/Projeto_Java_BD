@@ -1,11 +1,6 @@
 package projeto_java_bd;
 
-import DAO.CorpoDAO;
-import DAO.PersonagemDAO;
-import DAO.UsuarioDAO;
-
 import View.TelaLogin;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /*Criar um Usuario primeiro.

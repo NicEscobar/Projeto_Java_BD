@@ -5,28 +5,23 @@
  */
 package projeto_java_bd;
 
-import DAO.ConexaoDAO;
+import DAO.UsuarioDAO;
 
 /**
  *
  * @author aluno
  */
 public class Usuario {
+    
     private String nome;
     private String senha;
     private String email;
-    private boolean sexo;
+    private int id;
     
-    ConexaoDAO daoC = new ConexaoDAO();
-     
-     //Função para inserir um usuário no banco de dados
-     public void inserirUsuario(Usuario a) {
-         
-         daoC.inserir(a);
-     }    
-     
+    UsuarioDAO daoU = new UsuarioDAO();
     
     public Usuario(){
+        
         
     }
 
@@ -54,13 +49,31 @@ public class Usuario {
         this.email = email;
     }
 
-    public boolean getSexo() {
-        return sexo;
+    public int getId() {
+        return id;
     }
 
-    public void setSexo(boolean sexo) {
-        this.sexo = sexo;
+    public void setId(int id) {
+        this.id = id;
     }
+
     
+    public void inserirUsuario(Usuario u){
+        
+        daoU.inserirUsuario(u);
+        
+    };
     
+    public void deletarUsuario(int id){
+        
+        daoU.deletarUsuario(id);
+        
+    };
+    
+    public boolean buscarUsuario(String usuario, String senha){
+        
+        return daoU.buscarUsuario(usuario,senha);
+        
+    };
+        
 }

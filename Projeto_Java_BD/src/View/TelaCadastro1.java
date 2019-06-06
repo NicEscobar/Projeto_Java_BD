@@ -6,13 +6,15 @@
 package View;
 
 import javax.swing.JOptionPane;
+import projeto_java_bd.Usuario;
 
 /**
  *
  * @author Aguinaldo
  */
 public class TelaCadastro1 extends javax.swing.JFrame {
-
+        
+    
     /**
      * Creates new form TelaLogin
      */
@@ -33,21 +35,22 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        txtLogin = new javax.swing.JTextField();
-        txtSenha = new javax.swing.JPasswordField();
-        txtLogin1 = new javax.swing.JTextField();
-        txtLogin2 = new javax.swing.JTextField();
-        entrar1 = new javax.swing.JButton();
+        email = new javax.swing.JTextField();
+        nome = new javax.swing.JTextField();
+        Cancelar = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        entrar = new javax.swing.JButton();
+        Cadastrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        senha1 = new javax.swing.JPasswordField();
+        senha = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -62,121 +65,117 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 255, 255)));
         jPanel1.setLayout(null);
 
-        txtLogin.setBackground(new java.awt.Color(234, 255, 91));
-        txtLogin.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtLogin.setForeground(new java.awt.Color(82, 82, 171));
-        txtLogin.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtLogin.setBorder(null);
-        txtLogin.setCaretColor(new java.awt.Color(69, 73, 74));
-        txtLogin.addActionListener(new java.awt.event.ActionListener() {
+        email.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        email.setForeground(new java.awt.Color(82, 82, 171));
+        email.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        email.setBorder(null);
+        email.setCaretColor(new java.awt.Color(69, 73, 74));
+        email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLoginActionPerformed(evt);
+                emailActionPerformed(evt);
             }
         });
-        jPanel1.add(txtLogin);
-        txtLogin.setBounds(550, 270, 180, 30);
+        jPanel1.add(email);
+        email.setBounds(510, 276, 250, 30);
 
-        txtSenha.setBackground(new java.awt.Color(234, 255, 91));
-        txtSenha.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtSenha.setForeground(new java.awt.Color(82, 82, 171));
-        txtSenha.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtSenha.setBorder(null);
-        jPanel1.add(txtSenha);
-        txtSenha.setBounds(550, 220, 180, 30);
-
-        txtLogin1.setBackground(new java.awt.Color(234, 255, 91));
-        txtLogin1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtLogin1.setForeground(new java.awt.Color(82, 82, 171));
-        txtLogin1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtLogin1.setBorder(null);
-        txtLogin1.setCaretColor(new java.awt.Color(69, 73, 74));
-        txtLogin1.addActionListener(new java.awt.event.ActionListener() {
+        nome.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        nome.setForeground(new java.awt.Color(82, 82, 171));
+        nome.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        nome.setBorder(null);
+        nome.setCaretColor(new java.awt.Color(69, 73, 74));
+        nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLogin1ActionPerformed(evt);
+                nomeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtLogin1);
-        txtLogin1.setBounds(550, 330, 180, 30);
+        jPanel1.add(nome);
+        nome.setBounds(510, 107, 250, 30);
 
-        txtLogin2.setBackground(new java.awt.Color(234, 255, 91));
-        txtLogin2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        txtLogin2.setForeground(new java.awt.Color(82, 82, 171));
-        txtLogin2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtLogin2.setBorder(null);
-        txtLogin2.setCaretColor(new java.awt.Color(69, 73, 74));
-        txtLogin2.addActionListener(new java.awt.event.ActionListener() {
+        Cancelar.setBackground(new java.awt.Color(234, 234, 234));
+        Cancelar.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        Cancelar.setForeground(new java.awt.Color(51, 51, 51));
+        Cancelar.setText("VOLTAR");
+        Cancelar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        Cancelar.setContentAreaFilled(false);
+        Cancelar.setFocusPainted(false);
+        Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLogin2ActionPerformed(evt);
+                CancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(txtLogin2);
-        txtLogin2.setBounds(550, 160, 180, 30);
+        jPanel1.add(Cancelar);
+        Cancelar.setBounds(510, 320, 110, 40);
+        Cancelar.getAccessibleContext().setAccessibleName("VOLTAR");
 
-        entrar1.setBackground(new java.awt.Color(234, 234, 234));
-        entrar1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        entrar1.setForeground(new java.awt.Color(25, 24, 28));
-        entrar1.setText("CANCELAR");
-        entrar1.setBorder(null);
-        entrar1.setBorderPainted(false);
-        entrar1.setContentAreaFilled(false);
-        entrar1.setFocusPainted(false);
-        entrar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entrar1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(entrar1);
-        entrar1.setBounds(660, 370, 110, 20);
-
-        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(82, 82, 171));
         jLabel9.setText("EMAIL:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(550, 310, 53, 20);
+        jLabel9.setBounds(510, 257, 60, 20);
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(82, 82, 171));
         jLabel7.setText("CONFIRMAR SENHA:");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(550, 250, 151, 20);
+        jLabel7.setBounds(510, 201, 160, 20);
 
-        entrar.setBackground(new java.awt.Color(234, 234, 234));
-        entrar.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        entrar.setForeground(new java.awt.Color(25, 24, 28));
-        entrar.setText("CADASTRAR");
-        entrar.setBorder(null);
-        entrar.setBorderPainted(false);
-        entrar.setContentAreaFilled(false);
-        entrar.setFocusPainted(false);
-        entrar.addActionListener(new java.awt.event.ActionListener() {
+        Cadastrar.setBackground(new java.awt.Color(234, 234, 234));
+        Cadastrar.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        Cadastrar.setForeground(new java.awt.Color(51, 51, 51));
+        Cadastrar.setText("CADASTRAR");
+        Cadastrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        Cadastrar.setContentAreaFilled(false);
+        Cadastrar.setFocusPainted(false);
+        Cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entrarActionPerformed(evt);
+                CadastrarActionPerformed(evt);
             }
         });
-        jPanel1.add(entrar);
-        entrar.setBounds(540, 370, 120, 20);
+        jPanel1.add(Cadastrar);
+        Cadastrar.setBounds(630, 320, 130, 40);
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(82, 82, 171));
         jLabel3.setText("SENHA:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(550, 200, 60, 21);
+        jLabel3.setBounds(510, 146, 60, 17);
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(82, 82, 171));
         jLabel4.setText("NOME:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(550, 140, 61, 24);
+        jLabel4.setBounds(510, 88, 61, 20);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(540, 40, 251, 41);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 3, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 24, 28));
         jLabel1.setText("Projeto de Java e MySQL");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(550, 90, 170, 20);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(125, 125, 125))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(505, 6, 262, 70);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wpppp.png"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -209,10 +208,29 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
         jPanel4.setBounds(488, 403, 599, 262);
 
+        senha1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        senha1.setForeground(new java.awt.Color(82, 82, 171));
+        senha1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        senha1.setBorder(null);
+        senha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                senha1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(senha1);
+        senha1.setBounds(510, 220, 250, 30);
+
+        senha.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        senha.setForeground(new java.awt.Color(82, 82, 171));
+        senha.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        senha.setBorder(null);
+        jPanel1.add(senha);
+        senha.setBounds(510, 164, 250, 30);
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/c418ea50-7706-4849-b8e8-d3e52e43755c.jpg"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1000, 1000));
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(480, -130, 501, 530);
+        jLabel8.setBounds(441, -130, 540, 530);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -229,38 +247,49 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
+    private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
+        
+        Usuario u1 = new Usuario();
+        
+        if(senha.getText().equals(senha1.getText())){
+           
+           u1.setNome(nome.getText());
+           u1.setSenha(senha.getText());
+           u1.setEmail(email.getText());
+           
+           u1.inserirUsuario(u1);
+           
+           JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
+           
+           TelaLogin t1 = new TelaLogin();
+           t1.setVisible(true);
+           this.dispose(); 
+       }else{
+           JOptionPane.showMessageDialog(null, "ERRO - Senha errada");
+           nome.setText("");
+           email.setText("");
+           senha1.setText("");
+           senha.setText("");
+       }
+    }//GEN-LAST:event_CadastrarActionPerformed
 
-    }//GEN-LAST:event_txtLoginActionPerformed
-
-    private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
-
-        String usuario = "admin";
-        String senha = "admin";
-
-        if(txtLogin.getText().equals(usuario)&& txtSenha.getText().equals(senha)){
-            TelaInicial t3 = new TelaInicial();
-            t3.setVisible(true);
-            this.dispose();
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"Acesso Negado");
-            txtLogin.setText("");
-            txtSenha.setText("");
-        }
-    }//GEN-LAST:event_entrarActionPerformed
-
-    private void txtLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLogin1ActionPerformed
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLogin1ActionPerformed
+    }//GEN-LAST:event_emailActionPerformed
 
-    private void txtLogin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLogin2ActionPerformed
+    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtLogin2ActionPerformed
+    }//GEN-LAST:event_nomeActionPerformed
 
-    private void entrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrar1ActionPerformed
+    private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
+        TelaLogin t1 = new TelaLogin();
+        t1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_CancelarActionPerformed
+
+    private void senha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senha1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entrar1ActionPerformed
+    }//GEN-LAST:event_senha1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -301,8 +330,9 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton entrar;
-    private javax.swing.JButton entrar1;
+    private javax.swing.JButton Cadastrar;
+    private javax.swing.JButton Cancelar;
+    private javax.swing.JTextField email;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -315,10 +345,10 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField txtLogin;
-    private javax.swing.JTextField txtLogin1;
-    private javax.swing.JTextField txtLogin2;
-    private javax.swing.JPasswordField txtSenha;
+    private javax.swing.JTextField nome;
+    private javax.swing.JPasswordField senha;
+    private javax.swing.JPasswordField senha1;
     // End of variables declaration//GEN-END:variables
 }
