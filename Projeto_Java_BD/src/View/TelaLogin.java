@@ -223,10 +223,12 @@ public class TelaLogin extends javax.swing.JFrame {
         String loginTela = txtLogin.getText();
         String senhaTela = txtSenha.getText();
         
-        acheiUsuario = usuario.buscarUsuario(loginTela,senhaTela);
+        acheiUsuario = usuario.verificacaoUsuario(loginTela,senhaTela);
+        
+        int chaveUsuario = usuario.buscarUsuario(loginTela);
 
         if(acheiUsuario){
-            TelaInicial1 t3 = new TelaInicial1();
+            TelaInicial1 t3 = new TelaInicial1(chaveUsuario);
             t3.setVisible(true);
             this.dispose();
         }

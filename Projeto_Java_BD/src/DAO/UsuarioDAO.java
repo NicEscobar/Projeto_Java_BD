@@ -83,7 +83,48 @@ public class UsuarioDAO {
         }  
     }
     
-    public boolean buscarUsuario(String usuario, String senhaUsuario) {
+    public int buscarUsuario(String loginUsuario) {
+        
+         //ArrayList<Usuario> listaTemp = new ArrayList<>();
+         
+        con = conexao.connectionToDb();
+ 
+           
+        sql = "SELECT * FROM usuario";
+        
+        try {
+            
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            
+            
+           
+            while(rs.next())
+            {     
+                String emailBanco = rs.getString("email");
+                
+                if((emailBanco.equals(loginUsuario))){
+                    
+                    return rs.getInt(1);
+                }
+                  
+            }       
+
+        } catch (SQLException ex) {
+            
+            System.out.println("Erro = " + ex.getMessage());
+            
+            
+        } finally {
+            
+            conexao.fecharConexao(con,pst);
+
+        }
+        return -1;
+    }
+    
+    
+    public boolean verificacaoUsuario(String usuario, String senhaUsuario) {
         
          //ArrayList<Usuario> listaTemp = new ArrayList<>();
          

@@ -28,7 +28,7 @@ public class CorpoDAO {
      
      public void inserirCorpo(int numOrdem) {
        
-       sql = "INSERT INTO corpo(sexo, numeroOrdem ) values (?, ?);";
+       sql = "INSERT INTO corpo(numeroOrdem ) values (?);";
         
        con = daoC.connectionToDb();
         try {
@@ -36,9 +36,8 @@ public class CorpoDAO {
         //referenciando o objeto pst
         pst = con.prepareStatement(sql);
             
-        pst.setBoolean(1, true);
-        pst.setInt(2, numOrdem);
-        //pst.getGeneratedKeys();
+        pst.setInt(1, numOrdem);
+        
         
          pst.execute();
          

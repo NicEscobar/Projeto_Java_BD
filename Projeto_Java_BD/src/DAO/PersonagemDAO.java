@@ -13,7 +13,7 @@ import projeto_java_bd.Personagem;
 
 public class PersonagemDAO {
     
-        public Connection con;
+    public Connection con;
    //objeto para manipular comandos SQL Dinamicos
     public PreparedStatement pst;
     //objeto para manipular comandos SQL Estáticos
@@ -21,14 +21,15 @@ public class PersonagemDAO {
     //objeto que referencia a tabela gerada em uma busca
     public ResultSet rs;
     
-    public boolean sucess;
+    public boolean sucesso = false;
     String sql;
     
     ConexaoDAO daoP = new ConexaoDAO();
      
-    public void inserirPersonagem(Personagem p) {
+    public boolean inserirPersonagem(Personagem p) {
        
-        sql = "INSERT INTO personagem (nomePersonagem, idadePersonagem,usuario_idUsuario, corpo_idCorpo ) values (?,?,?,?);";
+       
+       sql = "INSERT INTO personagem (nomePersonagem, idadePersonagem, usuario_idUsuario, corpo_idCorpo ) values (?,?,?,?);";
         
        con = daoP.connectionToDb();
        
@@ -39,10 +40,12 @@ public class PersonagemDAO {
             
         pst.setString(1, p.getNomeP());
         pst.setString(2, p.getIdade());
-        pst.setInt(3, 2);
+        pst.setInt(3, p.getIdUsuario_Per());
         pst.setInt(4, 1);
         
-         pst.execute();
+        pst.execute();
+        
+        sucesso = true;
          
         } catch (SQLException ex) {
             
@@ -52,6 +55,7 @@ public class PersonagemDAO {
             
            daoP.fecharConexao(con,pst);
         }
+       return sucesso;
     }
        
        

@@ -7,6 +7,7 @@ package View;
 
 import javax.swing.JOptionPane;
 import java.awt.CardLayout;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.Icon;
@@ -14,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import projeto_java_bd.Personagem;
 import projeto_java_bd.Corpo;
+import projeto_java_bd.Usuario;
 
 /**
  *
@@ -25,8 +27,11 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private int contador = 0;
     private List<Corpo> listaCorpos = new ArrayList<>();
     
-    public TelaPersonagem() {
+    int chaveUsuario;
+    
+    public TelaPersonagem(int l) {
        
+        this.chaveUsuario = l;
         initComponents();
         initImage();
     }
@@ -424,25 +429,26 @@ public class TelaPersonagem extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+        //Objeto para guardar o corpo escolhido
         Corpo corpoEscolhido = listaCorpos.get(contador);
         
+        boolean sucesso = false;
         
         Personagem personagem = new Personagem();
        
-        personagem.setNomeP(nomePer.getText());
-        personagem.setIdade(idadePer.getText());
-        personagem.setCorpoId(corpoEscolhido.getNumeroO());
+            
+            
+            personagem.setNomeP(nomePer.getText());
+            personagem.setIdade(idadePer.getText());
+            personagem.setIdUsuario_Per(chaveUsuario);     
+            
+            sucesso = personagem.inserirPersonagem(personagem);
+            if(sucesso){
+               personagem.corpo.setNumeroO(contador);
+               personagem.corpo.inserirCorpo(contador);
+            }
         
-        personagem.corpo.setNumeroO(contador);
-        
-        personagem.inserirPersonagem(personagem);
        
-        
-        //personagem.inserirPersonagem(personagem);
-        
-        
-        
-        System.out.println(contador);
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -492,7 +498,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPersonagem().setVisible(true);
+                new TelaPersonagem(0).setVisible(true);
             }
         });
     }

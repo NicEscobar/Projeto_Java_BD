@@ -70,9 +70,15 @@ public class Usuario {
         
     };
     
-    public boolean buscarUsuario(String usuario, String senha){
+    public boolean verificacaoUsuario(String usuario, String senha){
         
-        return daoU.buscarUsuario(usuario,senha);
+        return daoU.verificacaoUsuario(usuario,senha);
+        
+    };
+    
+    public int buscarUsuario(String loginUsuario){
+        
+        return daoU.buscarUsuario(loginUsuario);
         
     };
         

@@ -13,8 +13,8 @@ import DAO.PersonagemDAO;
  */
 public class Personagem {
       
-    private String nomeP, id, idade;
-    private int corpoId;
+    private String nomeP, idade;
+    private int idUsuario_Per;
   
     
     PersonagemDAO daoP = new PersonagemDAO();
@@ -29,28 +29,21 @@ public class Personagem {
     
     }
 
-    public int getCorpoId() {
-        return corpoId;
+    public int getIdUsuario_Per() {
+        return idUsuario_Per;
     }
 
-    public void setCorpoId(int corpoId) {
-        this.corpoId = corpoId;
+    public void setIdUsuario_Per(int idUsuario_Per) {
+        this.idUsuario_Per = idUsuario_Per;
     }
 
+    
     public String getNomeP() {
         return nomeP;
     }
 
     public void setNomeP(String nomeP) {
         this.nomeP = nomeP;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getIdade() {
@@ -61,9 +54,9 @@ public class Personagem {
         this.idade = idade;
     }
     
-    public void inserirPersonagem(Personagem p){
+    public boolean inserirPersonagem(Personagem p){
         
-        daoP.inserirPersonagem(p);
+        return daoP.inserirPersonagem(p);
         
     };
     

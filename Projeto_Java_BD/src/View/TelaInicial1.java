@@ -13,11 +13,11 @@ import javax.swing.JOptionPane;
  */
 public class TelaInicial1 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaLogin
-     */
-    public TelaInicial1() {
+    int chaveUsuario;
+    
+    public TelaInicial1(int l) {
        
+        this.chaveUsuario = l;
         initComponents();
     }
 
@@ -320,7 +320,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        TelaPersonagem t5 = new TelaPersonagem();
+        TelaPersonagem t5 = new TelaPersonagem(chaveUsuario);
         t5.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -362,7 +362,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaInicial1().setVisible(true);
+                new TelaInicial1(0).setVisible(true);
             }
         });
     }

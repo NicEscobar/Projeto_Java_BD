@@ -22,7 +22,6 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`corpo` (
   `idCorpo` INT(11) NOT NULL AUTO_INCREMENT,
-  `sexo` TINYINT(1) NOT NULL,
   `numeroOrdem` INT NOT NULL,
   PRIMARY KEY (`idCorpo`),
   UNIQUE INDEX `idCorpo_UNIQUE` (`idCorpo` ASC) VISIBLE)
@@ -65,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`personagem` (
   `nomePersonagem` VARCHAR(45) NOT NULL,
   `idadePersonagem` INT NOT NULL,
   `usuario_idUsuario` INT(11) NOT NULL,
-  `corpo_idCorpo` INT(11) NOT NULL,
+  `corpo_idCorpo` INT(11),
   PRIMARY KEY (`idPersonagem`),
   INDEX `fk_personagem_usuario1_idx` (`usuario_idUsuario` ASC) VISIBLE,
   INDEX `fk_personagem_corpo1_idx` (`corpo_idCorpo` ASC) VISIBLE,
