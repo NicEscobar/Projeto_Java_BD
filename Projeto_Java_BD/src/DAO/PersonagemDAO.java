@@ -28,7 +28,7 @@ public class PersonagemDAO {
      
     public void inserirPersonagem(Personagem p) {
        
-        sql = "INSERT INTO personagem (nomePersonagem, idadePersonagem, usuario_idUsuario, ) values (?,?,?);";
+        sql = "INSERT INTO personagem (nomePersonagem, idadePersonagem,usuario_idUsuario, corpo_idCorpo ) values (?,?,?,?);";
         
        con = daoP.connectionToDb();
        
@@ -37,7 +37,10 @@ public class PersonagemDAO {
         //referenciando o objeto pst
         pst = con.prepareStatement(sql);
             
-        //pst.setString(1, p.getNomeP());
+        pst.setString(1, p.getNomeP());
+        pst.setString(2, p.getIdade());
+        pst.setInt(3, 2);
+        pst.setInt(4, 1);
         
          pst.execute();
          

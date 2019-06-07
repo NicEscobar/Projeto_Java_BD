@@ -320,8 +320,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        TelaPersonagem t4 = new TelaPersonagem();
-        t4.setVisible(true);
+        TelaPersonagem t5 = new TelaPersonagem();
+        t5.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

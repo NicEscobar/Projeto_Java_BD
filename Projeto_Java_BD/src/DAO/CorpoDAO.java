@@ -8,7 +8,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import projeto_java_bd.Corpo;
 
 public class CorpoDAO {
@@ -27,9 +26,9 @@ public class CorpoDAO {
     
     ConexaoDAO daoC = new ConexaoDAO();
      
-     public void inserirCorpo(Corpo c) {
+     public void inserirCorpo(int numOrdem) {
        
-       sql = "INSERT INTO usuario(nomeUsuario, senha, email ) values (?, ?, ?);";
+       sql = "INSERT INTO corpo(sexo, numeroOrdem ) values (?, ?);";
         
        con = daoC.connectionToDb();
         try {
@@ -37,6 +36,9 @@ public class CorpoDAO {
         //referenciando o objeto pst
         pst = con.prepareStatement(sql);
             
+        pst.setBoolean(1, true);
+        pst.setInt(2, numOrdem);
+        //pst.getGeneratedKeys();
         
          pst.execute();
          
@@ -47,7 +49,8 @@ public class CorpoDAO {
         }finally { 
             
            daoC.fecharConexao(con, pst);
-        }
+        }    
+        
     }
      
      public void deletarPersonagem (Corpo c) {
@@ -78,14 +81,13 @@ public class CorpoDAO {
         }  
     }
     
-    public void buscarCorpo() {
+    public boolean buscarCorpo(int idOrdem) {
         
-         ArrayList<Corpo> listaTemp = new ArrayList<>();
+       //ArrayList<Corpo> listaTemp = new ArrayList<>();
          
         con = daoC.connectionToDb();
- 
-           
-        sql = "SELECT * FROM usuario";
+    
+        sql = "SELECT * FROM corpo";
         
         try {
             
@@ -93,17 +95,7 @@ public class CorpoDAO {
             rs = st.executeQuery(sql);
             
             while(rs.next())
-            {             
-                
-
-                    //Usuario usuarioTemp = new Usuario(rs.getString("nomeUsuario"),rs.getInt("senha"),rs.getString("email"));
-
-                   // System.out.println("Nome = "+usuarioTemp.getNome());
-                   // System.out.println("Senha = "+usuarioTemp.getSenha());
-                   // System.out.println("Email = "+usuarioTemp.getEmail());
-
-                   // listaTemp.add(usuarioTemp);
-               
+            {                        
                
             }   
          
@@ -118,7 +110,7 @@ public class CorpoDAO {
             daoC.fecharConexao(con,pst);
 
         }
-
+        return true;
     }
       
 }
