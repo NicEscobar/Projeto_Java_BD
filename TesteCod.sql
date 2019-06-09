@@ -1,11 +1,9 @@
-USE mydb;
+select * from personagem;
+select * from corpo;
+select * from usuario;
 
-INSERT INTO corpo (cor) values ("preto");
-INSERT INTO usuario (nomeUsuario,senha,sexo, email) values ("Nicole",123,true,"n@hotm");
-INSERT INTO personagem (nomePersonagem, personagem_idUsuario, personagem_idCorpo) values ("Mario",1,1);
+UPDATE personagem SET corpo_idCorpo = 1 where idPersonagem = 1;
 
-DELETE from corpo where idCorpo = 1; 
-
-SELECT * FROM corpo;
-SELECT * FROM personagem;
-SELECT * FROM usuario;
+INSERT INTO personagem (nomePersonagem,idadePersonagem,usuario_idUsuario,corpo_idCorpo) VALUES ("teste2",13,1, (SELECT MAX(idCorpo) FROM corpo));
+SELECT MAX(idCorpo) FROM corpo;
+Insert into corpo (numeroOrdem) values (0);

@@ -447,22 +447,21 @@ public class TelaPersonagem extends javax.swing.JFrame {
         Corpo corpoEscolhido = listaCorpos.get(contador);
         
         boolean sucesso = false;
-       
+        
+        Personagem personagem = new Personagem();
+
             
+            personagem.corpo.setNumeroO(contador);
+            personagem.corpo.inserirCorpo(contador);
             
             personagem.setNomeP(nomePer.getText());
             personagem.setIdade(idadePer.getText());
-            personagem.setIdUsuario_Per(chaveUsuario); 
-             personagem.setIdPers_corpo(contador+1);
+
+            personagem.setIdUsuario_Per(chaveUsuario);
             
-            sucesso = personagem.inserirPersonagem(personagem);
             
-            if(sucesso){
-               personagem.corpo.setNumeroO(contador);
-              // personagem.corpo.inserirCorpo(contador, 1);
-            }
-            
-       
+            personagem.inserirPersonagem(personagem);
+    
         
         
     }//GEN-LAST:event_criarActionPerformed
