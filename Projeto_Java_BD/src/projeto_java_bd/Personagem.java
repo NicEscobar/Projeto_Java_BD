@@ -6,6 +6,7 @@
 package projeto_java_bd;
 
 import DAO.PersonagemDAO;
+import java.math.BigDecimal;
 
 /**
  *
@@ -14,13 +15,13 @@ import DAO.PersonagemDAO;
 public class Personagem {
       
     private String nomeP, idade;
-    private int idUsuario_Per;
-  
+    private int idUsuario_Per,idPers_corpo;
     
     PersonagemDAO daoP = new PersonagemDAO();
     
     public Corpo corpo = new Corpo();
     public Objeto obj = new Objeto();
+    
     
     public Personagem(){  
         
@@ -54,6 +55,15 @@ public class Personagem {
         this.idade = idade;
     }
     
+    
+    public int getIdPers_corpo() {
+        return idPers_corpo;
+    }
+
+    public void setIdPers_corpo(int idPers_corpo) {
+        this.idPers_corpo = idPers_corpo;
+    }
+    
     public boolean inserirPersonagem(Personagem p){
         
         return daoP.inserirPersonagem(p);
@@ -66,9 +76,10 @@ public class Personagem {
         
     };
     
-    public boolean buscarPersonagem(String usuario, String senha){
+    public int buscarPersonagem(Personagem p){
         
-        return daoP.buscarPersonagem(usuario,senha);
+        return daoP.buscarPersonagem(p);
         
     };
+    
 }

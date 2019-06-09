@@ -15,7 +15,7 @@ public class Projeto_Java_BD {
         t1.setVisible(true);
         
         boolean deuCerto = false;
-        
+        /*
         //Criando um novo usuario
         Scanner teclado = new Scanner(System.in);
         String nomeU = teclado.nextLine();
@@ -37,6 +37,6 @@ public class Projeto_Java_BD {
          //ArrayList<Usuario> lista = usuarioDAO.buscarUsuariosSemFiltro();
         
         if(deuCerto)
-            System.out.println("Inserção feita com sucesso!");
+            System.out.println("Inserção feita com sucesso!");*/
     }   
 }

@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author Aguinaldo
  */
 public class TelaInicial1 extends javax.swing.JFrame {
-
+    
     int chaveUsuario;
     
     public TelaInicial1(int l) {
@@ -45,7 +45,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
+        personagem = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -166,9 +166,9 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(234, 234, 234));
         jPanel5.setLayout(null);
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/#28.png"))); // NOI18N
-        jPanel5.add(jLabel18);
-        jLabel18.setBounds(40, 30, 140, 310);
+        personagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/#28.png"))); // NOI18N
+        jPanel5.add(personagem);
+        personagem.setBounds(40, 30, 140, 310);
 
         jLabel10.setFont(new java.awt.Font("Georgia", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(60, 63, 65));
@@ -303,7 +303,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void antActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_antActionPerformed
         
         
@@ -380,7 +380,6 @@ public class TelaInicial1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -398,6 +397,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
     private javax.swing.JLabel labelAlterar;
     private javax.swing.JLabel labelCriar;
     private javax.swing.JLabel labelExcluir;
+    private javax.swing.JLabel personagem;
     private javax.swing.JButton prox;
     private javax.swing.JButton sair;
     // End of variables declaration//GEN-END:variables

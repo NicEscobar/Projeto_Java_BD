@@ -3,12 +3,14 @@
  */
 package DAO;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import projeto_java_bd.Personagem;
+import projeto_java_bd.Usuario;
 
 public class PersonagemDAO {
     
@@ -85,31 +87,44 @@ public class PersonagemDAO {
         }  
     }
     
-        public boolean buscarPersonagem(String usuario, String senhaUsuario) {
+    public int buscarPersonagem(Personagem p) {
          //ArrayList<Usuario> listaTemp = new ArrayList<>();
+         BigDecimal bdValue = null;
+         int valueOf = 0;
          
+        sql = "SELECT c.numeroOrdem FROM personagem as p, corpo as c, usuario as u WHERE ? = c.idCorpo AND u.idUsuario = ?;"; 
         con = daoP.connectionToDb();
- 
-           
-        sql = "SELECT * FROM personagem";
-        
+       
         try {
             
-            st = con.createStatement();
-            rs = st.executeQuery(sql);
+            //referenciando o objeto pst
+            pst = con.prepareStatement(sql);
             
-            while(rs.next())
-            {     
-                String emailBanco = rs.getString("email");
-                String senhaBanco = rs.getString("senha");
-                
-                if((emailBanco.equals(usuario))&&(senhaBanco.equals(senhaUsuario))){
-                    
-                    return true;
-                }
-                  
-            }       
-
+            pst.setInt(1, p.getIdPers_corpo());
+            pst.setInt(2, p.getIdUsuario_Per());
+            pst.execute();
+        
+            sucesso = true;
+            
+            st = con.prepareStatement(sql);
+            rs = pst.executeQuery();
+            //rs = st.executeQuery(sql);
+            boolean prax = rs.next();  
+     
+            if(prax){
+                bdValue = rs.getBigDecimal("numeroOrdem");
+                valueOf = Integer.valueOf(bdValue.intValue());
+           }
+             /*
+             while(rs.next())
+             {
+             String emailBanco = rs.getString("email");
+             String senhaBanco = rs.getString("senha");
+             if((emailBanco.equals(u.getEmail()))&&(senhaBanco.equals(u.getSenha()))){
+             //    return true;
+             }
+             }    */
+            
         } catch (SQLException ex) {
             
             System.out.println("Erro = " + ex.getMessage());
@@ -120,6 +135,7 @@ public class PersonagemDAO {
             daoP.fecharConexao(con,pst);
 
         }
-        return false;
+        
+        return valueOf;
         }   
 }

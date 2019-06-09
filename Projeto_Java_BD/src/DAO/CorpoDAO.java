@@ -28,7 +28,9 @@ public class CorpoDAO {
      
      public void inserirCorpo(int numOrdem) {
        
+
        sql = "INSERT INTO corpo (numeroOrdem) VALUES (?) ";
+
         
        con = daoC.connectionToDb();
         try {
