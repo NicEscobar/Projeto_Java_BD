@@ -31,16 +31,16 @@ public class Corpo {
         
     };
     
-    public void deletarPersonagem(int id){
+    public void deletarCorpo(int id){
         
         //daoC.deletarPersonagem(id);
         
     };
     
-    //public boolean buscarPersonagem(String usuario, String senha){
+    public int buscarCorpo(int idOrdem){
         
-     //   return daoC.buscarCorpo();
+        return daoC.buscarCorpo(idOrdem);
         
-   // };
+    };
     
 }

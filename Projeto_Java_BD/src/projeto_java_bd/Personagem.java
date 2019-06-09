@@ -7,6 +7,7 @@ package projeto_java_bd;
 
 import DAO.PersonagemDAO;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 /**
  *
@@ -81,5 +82,10 @@ public class Personagem {
         return daoP.buscarPersonagem(p);
         
     };
+    
+    public ArrayList<Personagem> mostrarPersonagem(){
+        
+        return daoP.mostrarPersonagem();
+    }
     
 }

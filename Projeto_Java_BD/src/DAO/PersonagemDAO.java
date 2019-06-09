@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import projeto_java_bd.Personagem;
 import projeto_java_bd.Usuario;
 
@@ -137,5 +138,44 @@ public class PersonagemDAO {
         }
         
         return valueOf;
-        }   
-}
+        }  
+    
+    public ArrayList<Personagem> mostrarPersonagem(){
+        
+        ArrayList<Personagem> lista = new ArrayList<>();
+        
+        con = daoP.connectionToDb();
+        
+        String sql = "select * from personagem;";
+        String sql1 = "select * from personagem;";
+        
+        try {
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+     
+            while(rs.next()){
+                Personagem pTemp = new Personagem();
+                pTemp.setNomeP(rs.getString("nomePersonagem"));
+                pTemp.setIdade(rs.getString("idadePersonagem"));
+                pTemp.setIdUsuario_Per(rs.getInt("usuario_idUsuario"));
+                pTemp.setIdPers_corpo(rs.getInt("corpo_idCorpo"));
+                int s = rs.getInt("corpo_idCorpo");
+                pTemp.corpo.setNumeroO(pTemp.corpo.buscarCorpo(s));
+               
+                lista.add(pTemp);
+           }
+           } catch (SQLException ex) {
+            
+            System.out.println("Erro = " + ex.getMessage());
+            
+            
+        } finally {
+            
+            daoP.fecharConexao(con,pst);
+
+        }
+        
+        return lista;
+        }
+    }
+
