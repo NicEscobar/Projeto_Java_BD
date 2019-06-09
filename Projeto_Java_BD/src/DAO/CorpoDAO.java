@@ -26,9 +26,9 @@ public class CorpoDAO {
     
     ConexaoDAO daoC = new ConexaoDAO();
      
-     public void inserirCorpo(int numOrdem,int chavePer) {
+     public void inserirCorpo(int numOrdem) {
        
-       sql = "INSERT INTO corpo (idTable2, nomeTable2, idTable1) VALUES (2, 'teste2', (SELECT MAX(idTable1) FROM table1)) ";
+       sql = "INSERT INTO corpo (numeroOrdem) VALUES (?) ";
         
        con = daoC.connectionToDb();
         try {
@@ -37,8 +37,6 @@ public class CorpoDAO {
         pst = con.prepareStatement(sql);
             
         pst.setInt(1, numOrdem);
-        pst.setInt(2, 2);
-        pst.setInt(3, chavePer);
         
          pst.execute();
          

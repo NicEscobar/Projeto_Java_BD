@@ -437,7 +437,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         Personagem personagem = new Personagem();
             
             personagem.corpo.setNumeroO(contador);
-            personagem.corpo.inserirCorpo(contador, chaveUsuario);
+            personagem.corpo.inserirCorpo(contador);
             
             personagem.setNomeP(nomePer.getText());
             personagem.setIdade(idadePer.getText());

@@ -28,7 +28,7 @@ public class PersonagemDAO {
     public boolean inserirPersonagem(Personagem p) {
        
        
-       sql = "INSERT INTO personagem (nomePersonagem, idadePersonagem, usuario_idUsuario ) values (?,?,?);";
+       sql = "INSERT INTO personagem (nomePersonagem,idadePersonagem,usuario_idUsuario,corpo_idCorpo) VALUES (?,?,?,(SELECT MAX(idCorpo) FROM corpo));";
         
        con = daoP.connectionToDb();
        
@@ -40,7 +40,6 @@ public class PersonagemDAO {
         pst.setString(1, p.getNomeP());
         pst.setString(2, p.getIdade());
         pst.setInt(3, p.getIdUsuario_Per());
-        //pst.setInt(4, 1);
         
         pst.execute();
         

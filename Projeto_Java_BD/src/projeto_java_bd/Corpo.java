@@ -25,9 +25,9 @@ public class Corpo {
         this.numeroO = numeroO;
     }
     
-    public void inserirCorpo(int numOrdem, int chavePer){
+    public void inserirCorpo(int numOrdem){
         
-        daoC.inserirCorpo(numOrdem,chavePer);
+        daoC.inserirCorpo(numOrdem);
         
     };
     
