@@ -26,9 +26,9 @@ public class CorpoDAO {
     
     ConexaoDAO daoC = new ConexaoDAO();
      
-     public void inserirCorpo(int numOrdem) {
+     public void inserirCorpo(int numOrdem, int sexo) {
        
-       sql = "INSERT INTO corpo(numeroOrdem ) values (?);";
+       sql = "INSERT INTO corpo(numeroOrdem, sexo) values (?,?);";
         
        con = daoC.connectionToDb();
         try {
@@ -37,6 +37,7 @@ public class CorpoDAO {
         pst = con.prepareStatement(sql);
             
         pst.setInt(1, numOrdem);
+        pst.setInt(2, sexo);
         
         
          pst.execute();

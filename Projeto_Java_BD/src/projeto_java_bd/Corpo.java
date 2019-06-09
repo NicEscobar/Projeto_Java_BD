@@ -25,9 +25,9 @@ public class Corpo {
         this.numeroO = numeroO;
     }
     
-    public void inserirCorpo(int numOrdem){
+    public void inserirCorpo(int numOrdem,int sexo){
         
-        daoC.inserirCorpo(numOrdem);
+        daoC.inserirCorpo(numOrdem,sexo);
         
     };
     

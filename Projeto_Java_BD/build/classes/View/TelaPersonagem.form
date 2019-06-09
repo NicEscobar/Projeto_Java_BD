@@ -148,6 +148,19 @@
             </Constraint>
           </Constraints>
         </Component>
+        <Component class="javax.swing.JButton" name="mostrar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mostrar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mostrarActionPerformed"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="610" y="230" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
         <Component class="javax.swing.JLabel" name="labelCriar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -550,16 +563,16 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="criar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jButton1"/>
+            <Property name="text" type="java.lang.String" value="criar personagem"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="criarActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="600" y="290" width="-1" height="-1"/>
+              <AbsoluteConstraints x="600" y="290" width="120" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

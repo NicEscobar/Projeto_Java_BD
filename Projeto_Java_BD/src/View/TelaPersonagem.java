@@ -26,6 +26,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private CardLayout cardLayout;
     private int contador = 0;
     private List<Corpo> listaCorpos = new ArrayList<>();
+    Personagem personagem = new Personagem();
     
     int chaveUsuario;
     
@@ -61,7 +62,10 @@ public class TelaPersonagem extends javax.swing.JFrame {
         cardLayout=new CardLayout();
         mainPanel.setLayout(cardLayout);
         
-       
+        for (int i = 0; i < listaCorpos.size(); i++) {
+            cardLayout.next(mainPanel);
+            
+        }
     }
     
     @SuppressWarnings("unchecked")
@@ -74,6 +78,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         sair = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
         btnPrevious = new javax.swing.JButton();
+        mostrar = new javax.swing.JButton();
         labelCriar = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -100,7 +105,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        criar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
 
@@ -160,6 +165,15 @@ public class TelaPersonagem extends javax.swing.JFrame {
         });
         jPanel1.add(btnPrevious);
         btnPrevious.setBounds(550, 140, 100, 50);
+
+        mostrar.setText("Mostrar");
+        mostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(mostrar);
+        mostrar.setBounds(610, 230, 69, 23);
 
         labelCriar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         labelCriar.setForeground(new java.awt.Color(82, 82, 171));
@@ -348,14 +362,14 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
         jPanel4.setBounds(488, 403, 599, 262);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        criar.setText("criar personagem");
+        criar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                criarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(600, 290, 73, 23);
+        jPanel1.add(criar);
+        criar.setBounds(600, 290, 120, 23);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/c418ea50-7706-4849-b8e8-d3e52e43755c.jpg"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -427,31 +441,37 @@ public class TelaPersonagem extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cursoInstitutoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void criarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_criarActionPerformed
         
         //Objeto para guardar o corpo escolhido
         Corpo corpoEscolhido = listaCorpos.get(contador);
         
         boolean sucesso = false;
-        
-        Personagem personagem = new Personagem();
        
             
             
             personagem.setNomeP(nomePer.getText());
             personagem.setIdade(idadePer.getText());
-            personagem.setIdUsuario_Per(chaveUsuario);     
+            personagem.setIdUsuario_Per(chaveUsuario); 
+             personagem.setIdPers_corpo(contador+1);
             
             sucesso = personagem.inserirPersonagem(personagem);
+            
             if(sucesso){
                personagem.corpo.setNumeroO(contador);
-               personagem.corpo.inserirCorpo(contador);
+              // personagem.corpo.inserirCorpo(contador, 1);
             }
-        
+            
        
         
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_criarActionPerformed
+
+    private void mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarActionPerformed
+        TelaMostrar t1 = new TelaMostrar(personagem);
+        t1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -507,9 +527,9 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnPrevious;
     private javax.swing.JTextField cidadeInstituto;
+    private javax.swing.JButton criar;
     private javax.swing.JTextField cursoInstituto;
     private javax.swing.JTextField idadePer;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -536,6 +556,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel labelCriar;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JButton mostrar;
     private javax.swing.JTextField nomeInstituto;
     private javax.swing.JTextField nomePer;
     private javax.swing.JButton sair;
