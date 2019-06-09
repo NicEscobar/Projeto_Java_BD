@@ -435,17 +435,19 @@ public class TelaPersonagem extends javax.swing.JFrame {
         boolean sucesso = false;
         
         Personagem personagem = new Personagem();
-       
             
+            personagem.corpo.setNumeroO(contador);
+            personagem.corpo.inserirCorpo(contador, chaveUsuario);
             
             personagem.setNomeP(nomePer.getText());
             personagem.setIdade(idadePer.getText());
-            personagem.setIdUsuario_Per(chaveUsuario);     
+            personagem.setIdUsuario_Per(chaveUsuario);
+            
             
             sucesso = personagem.inserirPersonagem(personagem);
+                
             if(sucesso){
-               personagem.corpo.setNumeroO(contador);
-               personagem.corpo.inserirCorpo(contador);
+               
             }
         
        
