@@ -75,6 +75,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        ecluir = new javax.swing.JButton();
         sair = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
         btnPrevious = new javax.swing.JButton();
@@ -119,6 +120,15 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(21, 21, 21));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 255, 255)));
         jPanel1.setLayout(null);
+
+        ecluir.setText("Ecluir personagem");
+        ecluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ecluirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ecluir);
+        ecluir.setBounds(590, 340, 130, 23);
 
         sair.setBackground(new java.awt.Color(234, 234, 234));
         sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-exit-50.png"))); // NOI18N
@@ -172,7 +182,18 @@ public class TelaPersonagem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(mostrar);
+<<<<<<< HEAD
         mostrar.setBounds(610, 230, 75, 32);
+=======
+        mostrar.setBounds(610, 230, 69, 23);
+
+        labelCriar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        labelCriar.setForeground(new java.awt.Color(82, 82, 171));
+        labelCriar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-purposeful-man-50.png"))); // NOI18N
+        labelCriar.setText("CRIAR PERSONAGEM");
+        jPanel1.add(labelCriar);
+        labelCriar.setBounds(530, 260, 230, 40);
+>>>>>>> 4674313f142fb8da18bf1429e00191c5e5c214ce
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
         jPanel1.add(jLabel5);
@@ -477,6 +498,12 @@ public class TelaPersonagem extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_mostrarActionPerformed
 
+    private void ecluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ecluirActionPerformed
+       
+        
+        
+    }//GEN-LAST:event_ecluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -533,6 +560,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private javax.swing.JTextField cidadeInstituto;
     private javax.swing.JButton criar;
     private javax.swing.JTextField cursoInstituto;
+    private javax.swing.JButton ecluir;
     private javax.swing.JTextField idadePer;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
