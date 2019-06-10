@@ -5,6 +5,15 @@
  */
 package View;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JOptionPane;
 import projeto_java_bd.Usuario;
 
@@ -46,9 +55,9 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
         senha1 = new javax.swing.JPasswordField();
         senha = new javax.swing.JPasswordField();
-        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -64,7 +73,7 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 255, 255)));
         jPanel1.setLayout(null);
 
-        email.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        email.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         email.setForeground(new java.awt.Color(82, 82, 171));
         email.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         email.setBorder(null);
@@ -77,7 +86,7 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.add(email);
         email.setBounds(510, 276, 250, 30);
 
-        nome.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        nome.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         nome.setForeground(new java.awt.Color(82, 82, 171));
         nome.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         nome.setBorder(null);
@@ -91,7 +100,7 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         nome.setBounds(510, 107, 250, 30);
 
         Cancelar.setBackground(new java.awt.Color(234, 234, 234));
-        Cancelar.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        Cancelar.setFont(new java.awt.Font("Minecraft", 1, 16)); // NOI18N
         Cancelar.setForeground(new java.awt.Color(51, 51, 51));
         Cancelar.setText("VOLTAR");
         Cancelar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
@@ -105,20 +114,20 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.add(Cancelar);
         Cancelar.setBounds(510, 320, 110, 40);
 
-        jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(82, 82, 171));
         jLabel9.setText("EMAIL:");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(510, 257, 60, 20);
 
-        jLabel7.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(82, 82, 171));
         jLabel7.setText("CONFIRMAR SENHA:");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(510, 201, 160, 20);
 
         Cadastrar.setBackground(new java.awt.Color(234, 234, 234));
-        Cadastrar.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        Cadastrar.setFont(new java.awt.Font("Minecraft", 1, 16)); // NOI18N
         Cadastrar.setForeground(new java.awt.Color(51, 51, 51));
         Cadastrar.setText("CADASTRAR");
         Cadastrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
@@ -132,13 +141,13 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.add(Cadastrar);
         Cadastrar.setBounds(630, 320, 130, 40);
 
-        jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(82, 82, 171));
         jLabel3.setText("SENHA:");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(510, 146, 60, 17);
 
-        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(82, 82, 171));
         jLabel4.setText("NOME:");
         jPanel1.add(jLabel4);
@@ -175,7 +184,14 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
         jPanel4.setBounds(488, 403, 599, 262);
 
-        senha1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel10.setBackground(new java.awt.Color(82, 82, 171));
+        jLabel10.setFont(new java.awt.Font("Minecrafter Alt", 3, 50)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel10.setText("INATEL");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(540, 10, 220, 60);
+
+        senha1.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         senha1.setForeground(new java.awt.Color(82, 82, 171));
         senha1.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         senha1.setBorder(null);
@@ -187,22 +203,18 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.add(senha1);
         senha1.setBounds(510, 220, 250, 30);
 
-        senha.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        senha.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         senha.setForeground(new java.awt.Color(82, 82, 171));
         senha.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         senha.setBorder(null);
         jPanel1.add(senha);
         senha.setBounds(510, 164, 250, 30);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(530, 10, 220, 50);
-
-        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Minecraft", 3, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 24, 28));
         jLabel1.setText("Projeto de Java e MySQL");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(550, 60, 170, 20);
+        jLabel1.setBounds(550, 60, 180, 20);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/c418ea50-7706-4849-b8e8-d3e52e43755c.jpg"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -225,7 +237,22 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
-        
+        AudioInputStream inputStream;
+        try {
+        inputStream = AudioSystem.getAudioInputStream(new File("E:\\\\Projeto_Java_BD\\\\Projeto_Java_BD\\\\src\\\\D\\\\click.wav"));
+        Clip clip = AudioSystem.getClip();
+        clip.open(inputStream);
+        clip.start();
+        Thread.sleep(100); // looping as long as this thread is alive
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MusicThread.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MusicThread.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MusicThread.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MusicThread.class.getName()).log(Level.SEVERE, null, ex);
+        }
         Usuario u1 = new Usuario();
         
         if(senha.getText().equals(senha1.getText())){
@@ -259,6 +286,22 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     }//GEN-LAST:event_nomeActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
+        AudioInputStream inputStream;
+        try {
+        inputStream = AudioSystem.getAudioInputStream(new File("E:\\\\Projeto_Java_BD\\\\Projeto_Java_BD\\\\src\\\\D\\\\click.wav"));
+        Clip clip = AudioSystem.getClip();
+        clip.open(inputStream);
+        clip.start();
+        Thread.sleep(100); // looping as long as this thread is alive
+        } catch (UnsupportedAudioFileException ex) {
+            Logger.getLogger(MusicThread.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(MusicThread.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (LineUnavailableException ex) {
+            Logger.getLogger(MusicThread.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MusicThread.class.getName()).log(Level.SEVERE, null, ex);
+        }
         TelaLogin t1 = new TelaLogin();
         t1.setVisible(true);
         this.dispose();
@@ -312,10 +355,10 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;

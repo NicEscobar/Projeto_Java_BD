@@ -5,6 +5,15 @@
  */
 package View;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JOptionPane;
 import projeto_java_bd.Usuario;
 
@@ -17,6 +26,7 @@ public class TelaLogin extends javax.swing.JFrame {
     /**
      * Creates new form TelaLogin
      */
+    ClickThread m1 = new ClickThread();
     public TelaLogin() {
         initComponents();
     }
@@ -33,6 +43,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         txtLogin = new javax.swing.JTextField();
         txtSenha = new javax.swing.JPasswordField();
         entrar = new javax.swing.JButton();
@@ -42,7 +53,6 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -58,7 +68,14 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 255, 255)));
         jPanel1.setLayout(null);
 
-        txtLogin.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel7.setBackground(new java.awt.Color(82, 82, 171));
+        jLabel7.setFont(new java.awt.Font("Minecrafter Alt", 3, 53)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel7.setText("INATEL");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(530, 40, 230, 60);
+
+        txtLogin.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         txtLogin.setForeground(new java.awt.Color(82, 82, 171));
         txtLogin.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtLogin.setBorder(null);
@@ -71,7 +88,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(txtLogin);
         txtLogin.setBounds(500, 165, 260, 30);
 
-        txtSenha.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        txtSenha.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(82, 82, 171));
         txtSenha.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtSenha.setBorder(null);
@@ -79,7 +96,7 @@ public class TelaLogin extends javax.swing.JFrame {
         txtSenha.setBounds(500, 222, 260, 30);
 
         entrar.setBackground(new java.awt.Color(0, 51, 153));
-        entrar.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
+        entrar.setFont(new java.awt.Font("Minecraft", 1, 24)); // NOI18N
         entrar.setForeground(new java.awt.Color(51, 51, 51));
         entrar.setText("ENTRAR");
         entrar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 3, true));
@@ -93,20 +110,20 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(entrar);
         entrar.setBounds(560, 262, 150, 40);
 
-        jLabel3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(82, 82, 171));
         jLabel3.setText("SENHA:");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(500, 202, 60, 17);
 
-        jLabel4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(82, 82, 171));
         jLabel4.setText("EMAIL:");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(500, 141, 61, 24);
 
         cadastro.setBackground(new java.awt.Color(234, 234, 234));
-        cadastro.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
+        cadastro.setFont(new java.awt.Font("Minecraft", 3, 14)); // NOI18N
         cadastro.setForeground(new java.awt.Color(153, 0, 0));
         cadastro.setText("Ou clique aqui para cadastrar !");
         cadastro.setBorder(null);
@@ -151,15 +168,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
         jPanel4.setBounds(488, 403, 599, 262);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(530, 40, 220, 41);
-
-        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Minecraft", 3, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 24, 28));
         jLabel1.setText("Projeto de Java e MySQL");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(550, 90, 170, 20);
+        jLabel1.setBounds(550, 90, 180, 20);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/c418ea50-7706-4849-b8e8-d3e52e43755c.jpg"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -182,13 +195,14 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroActionPerformed
+        m1.start();
         TelaCadastro1 t2 = new TelaCadastro1();
         t2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cadastroActionPerformed
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
-
+        m1.start();
         Usuario usuario = new Usuario();
         boolean acheiUsuario = false;
         String loginTela = txtLogin.getText();
@@ -256,8 +270,8 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
