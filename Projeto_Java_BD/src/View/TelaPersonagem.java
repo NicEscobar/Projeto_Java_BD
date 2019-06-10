@@ -15,6 +15,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import projeto_java_bd.Personagem;
 import projeto_java_bd.Corpo;
+import projeto_java_bd.Instituto;
 import projeto_java_bd.Usuario;
 
 /**
@@ -445,6 +446,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         boolean sucesso = false;
         
         Personagem personagem = new Personagem();
+        Instituto instituto = new Instituto();
 
             
             personagem.corpo.setNumeroO(contador);
@@ -455,8 +457,12 @@ public class TelaPersonagem extends javax.swing.JFrame {
 
             personagem.setIdUsuario_Per(chaveUsuario);
             
+            instituto.setNomeInst(nomeInstituto.getText());
+            instituto.setCidade(cidadeInstituto.getText());
+            instituto.setCursoInst(cursoInstituto.getText());
             
             personagem.inserirPersonagem(personagem);
+            instituto.InserirInstituto(instituto);
             
             TelaInicial1 t3 = new TelaInicial1(chaveUsuario);
             t3.setVisible(true);
