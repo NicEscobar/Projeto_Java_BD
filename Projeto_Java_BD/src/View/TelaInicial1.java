@@ -6,24 +6,13 @@
 package View;
 
 import java.awt.CardLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.LineUnavailableException;
-import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import projeto_java_bd.Corpo;
+import projeto_java_bd.Instituto;
+
 import projeto_java_bd.Personagem;
 
 /**
@@ -36,7 +25,10 @@ public class TelaInicial1 extends javax.swing.JFrame {
     int chaveUsuario;
     ActionListener cmd1_clk;
     ArrayList<Personagem> lista = new ArrayList<>();
+    ArrayList<Instituto> listaInstituto = new ArrayList<>();
+    
     Personagem p = new Personagem();
+    Instituto instituto = new Instituto();
     
     private CardLayout cardLayout;
     private int contador = 0;
@@ -46,13 +38,21 @@ public class TelaInicial1 extends javax.swing.JFrame {
        
         this.chaveUsuario = l;
         initComponents();
-        
         this.lista = this.p.mostrarPersonagem();
-        if(lista.size()!=0){
+        this.listaInstituto = this.instituto.mostrarInstituto();
+        
+        if(!lista.isEmpty()){
             p.setNomeP(lista.get(0).getNomeP());
             MostrarNome.setText(p.getNomeP());
             p.setIdade(lista.get(0).getIdade());
             MostrarIdade.setText(p.getIdade());
+            instituto.setNomeInst(null);
+            instituto.setNomeInst(listaInstituto.get(0).getNomeInst());
+            MostrarInstituto.setText(instituto.getNomeInst());
+            instituto.setCidade(listaInstituto.get(0).getCidade());
+            MostrarCidade.setText(instituto.getCidade());
+            instituto.setCursoInst(listaInstituto.get(0).getCursoInst());
+            MostrarCurso.setText(instituto.getCursoInst());
             initImage();
         }
        
@@ -109,6 +109,9 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         MostrarIdade = new javax.swing.JLabel();
         MostrarNome = new javax.swing.JLabel();
+        MostrarInstituto = new javax.swing.JLabel();
+        MostrarCidade = new javax.swing.JLabel();
+        MostrarCurso = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -290,6 +293,12 @@ public class TelaInicial1 extends javax.swing.JFrame {
         MostrarNome.setFont(new java.awt.Font("Minecraft", 1, 12)); // NOI18N
         jPanel6.add(MostrarNome);
         MostrarNome.setBounds(0, 90, 160, 20);
+        jPanel6.add(MostrarInstituto);
+        MostrarInstituto.setBounds(0, 200, 210, 20);
+        jPanel6.add(MostrarCidade);
+        MostrarCidade.setBounds(0, 244, 220, 20);
+        jPanel6.add(MostrarCurso);
+        MostrarCurso.setBounds(0, 294, 220, 20);
 
         jLabel20.setBackground(new java.awt.Color(200, 87, 87));
         jLabel20.setFont(new java.awt.Font("Minecraft", 1, 17)); // NOI18N
@@ -384,7 +393,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
 
         jLabel19.setText("jLabel19");
         jPanel1.add(jLabel19);
-        jLabel19.setBounds(10, 50, 48, 16);
+        jLabel19.setBounds(10, 50, 40, 14);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -430,10 +439,17 @@ public class TelaInicial1 extends javax.swing.JFrame {
         if (i >= lista.size())
             i = 0;
         p = lista.get(i);
-        MostrarNome.setText(p.getNomeP());
-        MostrarIdade.setText(p.getIdade());
+        instituto = listaInstituto.get(i);
+     
+           MostrarNome.setText(p.getNomeP());
+           MostrarIdade.setText(p.getIdade());
+           
+           MostrarInstituto.setText(instituto.getNomeInst());
+           MostrarCidade.setText(instituto.getCidade());
+           MostrarCurso.setText(instituto.getCursoInst());
+           
         
-        cardLayout.next(painelPersonagem);
+           cardLayout.next(painelPersonagem);
         
         i++;
     }//GEN-LAST:event_proxActionPerformed
@@ -506,7 +522,10 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel MostrarCidade;
+    private javax.swing.JLabel MostrarCurso;
     private javax.swing.JLabel MostrarIdade;
+    private javax.swing.JLabel MostrarInstituto;
     private javax.swing.JLabel MostrarNome;
     private javax.swing.JButton ant;
     private javax.swing.JButton jButton1;

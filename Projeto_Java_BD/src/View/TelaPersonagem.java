@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import projeto_java_bd.Personagem;
 import projeto_java_bd.Corpo;
+import projeto_java_bd.Instituto;
 import projeto_java_bd.Usuario;
 
 /**
@@ -90,8 +91,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        PainelComponente = new javax.swing.JPanel();
         mainPanel = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -155,7 +155,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnNext);
-        btnNext.setBounds(650, 200, 110, 50);
+        btnNext.setBounds(650, 140, 110, 50);
 
         btnPrevious.setBackground(new java.awt.Color(234, 234, 234));
         btnPrevious.setFont(new java.awt.Font("Minecraft", 1, 16)); // NOI18N
@@ -186,29 +186,21 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(234, 234, 234));
         jPanel5.setLayout(null);
 
-        jPanel7.setOpaque(false);
+        PainelComponente.setOpaque(false);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ci.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(71, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(57, 57, 57))
+        javax.swing.GroupLayout PainelComponenteLayout = new javax.swing.GroupLayout(PainelComponente);
+        PainelComponente.setLayout(PainelComponenteLayout);
+        PainelComponenteLayout.setHorizontalGroup(
+            PainelComponenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 180, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel4)
-                .addContainerGap(59, Short.MAX_VALUE))
+        PainelComponenteLayout.setVerticalGroup(
+            PainelComponenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 330, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel7);
-        jPanel7.setBounds(0, 0, 180, 140);
+        jPanel5.add(PainelComponente);
+        PainelComponente.setBounds(0, 0, 180, 330);
 
         mainPanel.setOpaque(false);
 
@@ -401,7 +393,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(criar);
-        criar.setBounds(480, 310, 250, 60);
+        criar.setBounds(530, 310, 250, 60);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/c418ea50-7706-4849-b8e8-d3e52e43755c.jpg"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -489,6 +481,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         boolean sucesso = false;
         
         Personagem personagem = new Personagem();
+        Instituto instituto = new Instituto();
 
             
             personagem.corpo.setNumeroO(contador);
@@ -499,8 +492,12 @@ public class TelaPersonagem extends javax.swing.JFrame {
 
             personagem.setIdUsuario_Per(chaveUsuario);
             
+            instituto.setNomeInst(nomeInstituto.getText());
+            instituto.setCidade(cidadeInstituto.getText());
+            instituto.setCursoInst(cursoInstituto.getText());
             
             personagem.inserirPersonagem(personagem);
+            instituto.InserirInstituto(instituto);
             
             TelaInicial1 t3 = new TelaInicial1(chaveUsuario);
             t3.setVisible(true);
@@ -559,6 +556,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PainelComponente;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnPrevious;
     private javax.swing.JTextField cidadeInstituto;
@@ -580,7 +578,6 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -590,7 +587,6 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField nomeInstituto;
     private javax.swing.JTextField nomePer;

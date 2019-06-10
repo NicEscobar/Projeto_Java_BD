@@ -35,7 +35,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `mydb`.`instituto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`instituto` (
-  `idInstituto` INT(11) NOT NULL,
+  `idInstituto` INT(11) NOT NULL AUTO_INCREMENT,
   `nomeInstituto` VARCHAR(45) NOT NULL,
   `cidade` VARCHAR(45) NOT NULL,
   `cursoInstituto` VARCHAR(45) NOT NULL,
@@ -105,8 +105,8 @@ ENGINE = InnoDB;
 -- Table `mydb`.`instituto_has_personagem`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`instituto_has_personagem` (
-  `instituto_idInstituto` INT(11) NOT NULL,
-  `personagem_idPersonagem` INT(11) NOT NULL,
+  `instituto_idInstituto` INT(11),
+  `personagem_idPersonagem` INT(11),
   PRIMARY KEY (`instituto_idInstituto`, `personagem_idPersonagem`),
   INDEX `fk_instituto_has_personagem_personagem1_idx` (`personagem_idPersonagem` ASC) VISIBLE,
   INDEX `fk_instituto_has_personagem_instituto1_idx` (`instituto_idInstituto` ASC) VISIBLE,

@@ -6,7 +6,6 @@
 package projeto_java_bd;
 
 import DAO.PersonagemDAO;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
