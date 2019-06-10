@@ -112,7 +112,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Acesso");
+        setTitle("Criação de Personagem");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(21, 21, 21));
@@ -231,7 +231,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
             }
         });
         jPanel6.add(nomePer);
-        nomePer.setBounds(0, 90, 220, 14);
+        nomePer.setBounds(0, 90, 220, 20);
 
         cidadeInstituto.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
         cidadeInstituto.addActionListener(new java.awt.event.ActionListener() {
@@ -331,12 +331,12 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(3, 3, 480, 388);
+        jPanel2.setBounds(3, 3, 480, 398);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

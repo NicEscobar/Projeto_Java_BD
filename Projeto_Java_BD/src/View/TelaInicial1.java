@@ -67,7 +67,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
         for (int i = 0; i < lista.size(); i++) {
             cardLayout.next(painelPersonagem);
             
-        }
+        } 
+        
         
         cardLayout.show(painelPersonagem, "src/img/"+p.corpo.getNumeroO()+".png");
        
@@ -116,7 +117,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Acesso");
+        setTitle("Menu");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(21, 21, 21));
@@ -255,7 +256,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19e30add-7434-40f0-a0e0-5bbff8db1a82.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jPanel5.add(jLabel3);
-        jLabel3.setBounds(-40, -10, 300, 360);
+        jLabel3.setBounds(-50, -10, 300, 360);
 
         jPanel3.add(jPanel5);
         jPanel5.setBounds(20, 40, 180, 330);
@@ -342,12 +343,12 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(3, 3, 480, 388);
+        jPanel2.setBounds(3, 3, 480, 399);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -393,7 +394,11 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }//GEN-LAST:event_antActionPerformed
 
     private void proxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proxActionPerformed
-         initImage();
+         //initImage();
+        for (int i = 0; i < lista.size(); i++) {
+            cardLayout.next(painelPersonagem);
+            
+        } 
         if (i >= lista.size())
             i = 0;
         p = lista.get(i);
@@ -402,8 +407,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
         p.setIdPers_corpo(lista.get(i).getIdPers_corpo());
         p.setIdUsuario_Per(lista.get(i).getIdUsuario_Per());
         p.corpo.setNumeroO(lista.get(i).corpo.buscarCorpo(p.getIdPers_corpo()));*/
-           MostrarNome.setText(p.getNomeP());
-           MostrarIdade.setText(p.getIdade());
+        MostrarNome.setText(p.getNomeP());
+        MostrarIdade.setText(p.getIdade());
         
         cardLayout.next(painelPersonagem);
         
