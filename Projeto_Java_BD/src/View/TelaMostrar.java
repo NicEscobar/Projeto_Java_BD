@@ -50,7 +50,7 @@ public class TelaMostrar extends javax.swing.JFrame {
         
         for(String s : filesName){
             
-            Icon icon = new ImageIcon("src/img/"+s);
+            Icon icon = new ImageIcon("src/img/");
             JLabel label = new JLabel(icon);
             
             Corpo corpo = new Corpo();

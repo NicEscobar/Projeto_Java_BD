@@ -81,7 +81,7 @@ public class CorpoDAO {
         }  
     }
     
-    public boolean buscarCorpo(int idOrdem) {
+    public int buscarCorpo(int idOrdem) {
         
        //ArrayList<Corpo> listaTemp = new ArrayList<>();
          
@@ -96,9 +96,11 @@ public class CorpoDAO {
             
             while(rs.next())
             {                        
-               
-            }   
-         
+                int idBanco = rs.getInt("idCorpo");
+             if(idBanco == idOrdem){
+                 return rs.getInt("numeroOrdem");
+                }   
+            }
 
         } catch (SQLException ex) {
             
@@ -110,7 +112,7 @@ public class CorpoDAO {
             daoC.fecharConexao(con,pst);
 
         }
-        return true;
+        return 0;
     }
       
 }
