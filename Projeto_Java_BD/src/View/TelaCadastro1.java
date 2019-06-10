@@ -105,7 +105,6 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         });
         jPanel1.add(Cancelar);
         Cancelar.setBounds(510, 320, 110, 40);
-        Cancelar.getAccessibleContext().setAccessibleName("VOLTAR");
 
         jLabel9.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(82, 82, 171));
@@ -175,7 +174,7 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(505, 6, 262, 70);
+        jPanel3.setBounds(510, 10, 262, 80);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wpppp.png"))); // NOI18N
         jLabel6.setText("jLabel6");

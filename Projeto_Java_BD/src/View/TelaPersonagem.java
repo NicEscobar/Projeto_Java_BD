@@ -79,7 +79,6 @@ public class TelaPersonagem extends javax.swing.JFrame {
         btnNext = new javax.swing.JButton();
         btnPrevious = new javax.swing.JButton();
         mostrar = new javax.swing.JButton();
-        labelCriar = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -173,14 +172,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(mostrar);
-        mostrar.setBounds(610, 230, 69, 23);
-
-        labelCriar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        labelCriar.setForeground(new java.awt.Color(82, 82, 171));
-        labelCriar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-purposeful-man-50.png"))); // NOI18N
-        labelCriar.setText("CRIAR PERSONAGEM");
-        jPanel1.add(labelCriar);
-        labelCriar.setBounds(540, 320, 230, 40);
+        mostrar.setBounds(610, 230, 75, 32);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
         jPanel1.add(jLabel5);
@@ -198,11 +190,13 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(234, 234, 234));
         jPanel5.setLayout(null);
 
+        mainPanel.setBackground(new java.awt.Color(255, 225, 75));
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
+            .addGap(0, 160, Short.MAX_VALUE)
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,7 +204,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         );
 
         jPanel5.add(mainPanel);
-        mainPanel.setBounds(0, 50, 180, 280);
+        mainPanel.setBounds(10, 50, 160, 280);
 
         jLabel10.setFont(new java.awt.Font("Georgia", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(60, 63, 65));
@@ -230,45 +224,50 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(234, 234, 234));
         jPanel6.setLayout(null);
 
+        nomeInstituto.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
         nomeInstituto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomeInstitutoActionPerformed(evt);
             }
         });
         jPanel6.add(nomeInstituto);
-        nomeInstituto.setBounds(0, 200, 220, 20);
+        nomeInstituto.setBounds(0, 200, 220, 22);
 
+        nomePer.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
         nomePer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nomePerActionPerformed(evt);
             }
         });
         jPanel6.add(nomePer);
-        nomePer.setBounds(0, 90, 220, 20);
+        nomePer.setBounds(0, 90, 220, 22);
 
+        cidadeInstituto.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
         cidadeInstituto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cidadeInstitutoActionPerformed(evt);
             }
         });
         jPanel6.add(cidadeInstituto);
-        cidadeInstituto.setBounds(0, 250, 220, 20);
+        cidadeInstituto.setBounds(0, 250, 220, 22);
 
+        cursoInstituto.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
         cursoInstituto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cursoInstitutoActionPerformed(evt);
             }
         });
         jPanel6.add(cursoInstituto);
-        cursoInstituto.setBounds(0, 300, 220, 20);
+        cursoInstituto.setBounds(0, 300, 220, 22);
 
+        idadePer.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
         idadePer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idadePerActionPerformed(evt);
             }
         });
         jPanel6.add(idadePer);
-        idadePer.setBounds(0, 130, 220, 20);
+        idadePer.setBounds(0, 130, 220, 22);
 
         jLabel21.setFont(new java.awt.Font("Georgia", 1, 17)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(200, 87, 87));
@@ -362,14 +361,20 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
         jPanel4.setBounds(488, 403, 599, 262);
 
-        criar.setText("criar personagem");
+        criar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        criar.setForeground(new java.awt.Color(82, 82, 171));
+        criar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-purposeful-man-50.png"))); // NOI18N
+        criar.setText("CRIAR PERSONAGEM");
+        criar.setBorder(null);
+        criar.setBorderPainted(false);
+        criar.setContentAreaFilled(false);
         criar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 criarActionPerformed(evt);
             }
         });
         jPanel1.add(criar);
-        criar.setBounds(600, 290, 120, 23);
+        criar.setBounds(540, 310, 230, 60);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/c418ea50-7706-4849-b8e8-d3e52e43755c.jpg"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -378,7 +383,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
 
         jLabel19.setText("jLabel19");
         jPanel1.add(jLabel19);
-        jLabel19.setBounds(10, 50, 40, 14);
+        jLabel19.setBounds(10, 50, 48, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -553,7 +558,6 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel labelCriar;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton mostrar;
     private javax.swing.JTextField nomeInstituto;

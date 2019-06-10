@@ -59,6 +59,9 @@ public class Slider extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
+        mainPanel.setBackground(new java.awt.Color(153, 153, 255));
+        mainPanel.setOpaque(false);
+
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
@@ -80,7 +83,7 @@ public class Slider extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnPrevious);
-        btnPrevious.setBounds(470, 350, 71, 23);
+        btnPrevious.setBounds(470, 350, 76, 32);
 
         btnNext.setText("Proximo");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +92,7 @@ public class Slider extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnNext);
-        btnNext.setBounds(480, 190, 71, 23);
+        btnNext.setBounds(480, 190, 78, 32);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

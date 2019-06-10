@@ -13,12 +13,11 @@ import projeto_java_bd.Usuario;
  * @author Aguinaldo
  */
 public class TelaLogin extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form TelaLogin
      */
     public TelaLogin() {
-       
         initComponents();
     }
 
@@ -40,12 +39,11 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         cadastro = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -108,9 +106,9 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel4.setBounds(500, 141, 61, 24);
 
         cadastro.setBackground(new java.awt.Color(234, 234, 234));
-        cadastro.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        cadastro.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         cadastro.setForeground(new java.awt.Color(153, 0, 0));
-        cadastro.setText("Já está cadastrado?");
+        cadastro.setText("Ou clique aqui para cadastrar !");
         cadastro.setBorder(null);
         cadastro.setBorderPainted(false);
         cadastro.setContentAreaFilled(false);
@@ -120,43 +118,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jPanel1.add(cadastro);
-        cadastro.setBounds(530, 330, 210, 15);
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPanel3.setPreferredSize(new java.awt.Dimension(250, 91));
-        jPanel3.setRequestFocusEnabled(false);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(25, 24, 28));
-        jLabel1.setText("Projeto de Java e MySQL");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-        );
-
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(495, 10, 272, 120);
+        cadastro.setBounds(510, 290, 250, 70);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wpppp.png"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -189,6 +151,16 @@ public class TelaLogin extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
         jPanel4.setBounds(488, 403, 599, 262);
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(530, 40, 220, 41);
+
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(25, 24, 28));
+        jLabel1.setText("Projeto de Java e MySQL");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(550, 90, 170, 20);
+
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/c418ea50-7706-4849-b8e8-d3e52e43755c.jpg"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1000, 1000));
         jPanel1.add(jLabel8);
@@ -219,10 +191,8 @@ public class TelaLogin extends javax.swing.JFrame {
 
         Usuario usuario = new Usuario();
         boolean acheiUsuario = false;
-        
         String loginTela = txtLogin.getText();
         String senhaTela = txtSenha.getText();
-        
         acheiUsuario = usuario.verificacaoUsuario(loginTela,senhaTela);
         
         int chaveUsuario = usuario.buscarUsuario(loginTela);
@@ -291,7 +261,6 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtSenha;
