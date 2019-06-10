@@ -174,8 +174,6 @@
             </Constraint>
           </Constraints>
         </Component>
-<<<<<<< HEAD
-=======
         <Component class="javax.swing.JLabel" name="labelCriar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -195,7 +193,6 @@
             </Constraint>
           </Constraints>
         </Component>
->>>>>>> 4674313f142fb8da18bf1429e00191c5e5c214ce
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -275,21 +272,16 @@
                   </Layout>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="mainPanel">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="4b" green="e1" red="ff" type="rgb"/>
-                        </Property>
-                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                          <AbsoluteConstraints x="10" y="50" width="160" height="280"/>
+                          <AbsoluteConstraints x="0" y="50" width="180" height="280"/>
                         </Constraint>
                       </Constraints>
 
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="160" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="180" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -350,11 +342,6 @@
                   </Layout>
                   <SubComponents>
                     <Component class="javax.swing.JTextField" name="nomeInstituto">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Georgia" size="12" style="3"/>
-                        </Property>
-                      </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomeInstitutoActionPerformed"/>
                       </Events>
@@ -365,11 +352,6 @@
                       </Constraints>
                     </Component>
                     <Component class="javax.swing.JTextField" name="nomePer">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Georgia" size="12" style="3"/>
-                        </Property>
-                      </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nomePerActionPerformed"/>
                       </Events>
@@ -380,11 +362,6 @@
                       </Constraints>
                     </Component>
                     <Component class="javax.swing.JTextField" name="cidadeInstituto">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Georgia" size="12" style="3"/>
-                        </Property>
-                      </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cidadeInstitutoActionPerformed"/>
                       </Events>
@@ -395,11 +372,6 @@
                       </Constraints>
                     </Component>
                     <Component class="javax.swing.JTextField" name="cursoInstituto">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Georgia" size="12" style="3"/>
-                        </Property>
-                      </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cursoInstitutoActionPerformed"/>
                       </Events>
@@ -410,11 +382,6 @@
                       </Constraints>
                     </Component>
                     <Component class="javax.swing.JTextField" name="idadePer">
-                      <Properties>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Georgia" size="12" style="3"/>
-                        </Property>
-                      </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idadePerActionPerformed"/>
                       </Events>
@@ -611,28 +578,14 @@
         </Container>
         <Component class="javax.swing.JButton" name="criar">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Georgia" size="14" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ab" green="52" red="52" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/icons8-purposeful-man-50.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="CRIAR PERSONAGEM"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="null"/>
-            </Property>
-            <Property name="borderPainted" type="boolean" value="false"/>
-            <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="criar personagem"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="criarActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="540" y="310" width="230" height="60"/>
+              <AbsoluteConstraints x="600" y="290" width="120" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
