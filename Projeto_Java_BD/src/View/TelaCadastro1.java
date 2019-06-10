@@ -43,14 +43,13 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         Cadastrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         senha1 = new javax.swing.JPasswordField();
         senha = new javax.swing.JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -145,37 +144,6 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         jPanel1.add(jLabel4);
         jLabel4.setBounds(510, 88, 61, 20);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(25, 24, 28));
-        jLabel1.setText("Projeto de Java e MySQL");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(125, 125, 125))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(510, 10, 262, 80);
-
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/wpppp.png"))); // NOI18N
         jLabel6.setText("jLabel6");
 
@@ -225,6 +193,16 @@ public class TelaCadastro1 extends javax.swing.JFrame {
         senha.setBorder(null);
         jPanel1.add(senha);
         senha.setBounds(510, 164, 250, 30);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(530, 10, 220, 50);
+
+        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(25, 24, 28));
+        jLabel1.setText("Projeto de Java e MySQL");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(550, 60, 170, 20);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/c418ea50-7706-4849-b8e8-d3e52e43755c.jpg"))); // NOI18N
         jLabel8.setMaximumSize(new java.awt.Dimension(1000, 1000));
@@ -344,7 +322,6 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField nome;
     private javax.swing.JPasswordField senha;

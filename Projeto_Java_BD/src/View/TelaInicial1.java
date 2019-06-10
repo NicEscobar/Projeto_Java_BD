@@ -81,13 +81,11 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         sair = new javax.swing.JButton();
         prox = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        labelExcluir = new javax.swing.JLabel();
-        labelAlterar = new javax.swing.JLabel();
         ant = new javax.swing.JButton();
-        labelCriar = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -127,7 +125,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(82, 82, 171));
-        jButton1.setText("jButton1");
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-trash-can-50.png"))); // NOI18N
+        jButton1.setText("DELETAR PERSONAGEM");
         jButton1.setBorder(null);
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
@@ -137,7 +136,37 @@ public class TelaInicial1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(590, 130, 63, 17);
+        jButton1.setBounds(480, 260, 260, 50);
+
+        jButton4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(82, 82, 171));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-purposeful-man-50.png"))); // NOI18N
+        jButton4.setText("CRIAR PERSONAGEM");
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4);
+        jButton4.setBounds(470, 140, 260, 60);
+
+        jButton5.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(82, 82, 171));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-female-user-50.png"))); // NOI18N
+        jButton5.setText("ALTERAR PERSONAGEM");
+        jButton5.setBorder(null);
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5);
+        jButton5.setBounds(480, 200, 260, 50);
 
         sair.setBackground(new java.awt.Color(234, 234, 234));
         sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-exit-50.png"))); // NOI18N
@@ -167,29 +196,6 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel1.add(prox);
         prox.setBounds(650, 310, 110, 50);
 
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(470, 340, 77, 32);
-
-        labelExcluir.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        labelExcluir.setForeground(new java.awt.Color(82, 82, 171));
-        labelExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-trash-can-50.png"))); // NOI18N
-        labelExcluir.setText("EXCLUIR PERSONAGEM");
-        jPanel1.add(labelExcluir);
-        labelExcluir.setBounds(490, 260, 250, 40);
-
-        labelAlterar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        labelAlterar.setForeground(new java.awt.Color(82, 82, 171));
-        labelAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-female-user-50.png"))); // NOI18N
-        labelAlterar.setText("ALTERAR PERSONAGEM");
-        jPanel1.add(labelAlterar);
-        labelAlterar.setBounds(490, 200, 241, 40);
-
         ant.setBackground(new java.awt.Color(234, 234, 234));
         ant.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
         ant.setForeground(new java.awt.Color(25, 24, 28));
@@ -206,13 +212,6 @@ public class TelaInicial1 extends javax.swing.JFrame {
         });
         jPanel1.add(ant);
         ant.setBounds(540, 310, 100, 50);
-
-        labelCriar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        labelCriar.setForeground(new java.awt.Color(82, 82, 171));
-        labelCriar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-purposeful-man-50.png"))); // NOI18N
-        labelCriar.setText("CRIAR PERSONAGEM");
-        jPanel1.add(labelCriar);
-        labelCriar.setBounds(490, 150, 230, 40);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
         jPanel1.add(jLabel5);
@@ -236,15 +235,15 @@ public class TelaInicial1 extends javax.swing.JFrame {
         painelPersonagem.setLayout(painelPersonagemLayout);
         painelPersonagemLayout.setHorizontalGroup(
             painelPersonagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
+            .addGap(0, 180, Short.MAX_VALUE)
         );
         painelPersonagemLayout.setVerticalGroup(
             painelPersonagemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
+            .addGap(0, 290, Short.MAX_VALUE)
         );
 
         jPanel5.add(painelPersonagem);
-        painelPersonagem.setBounds(10, 60, 160, 260);
+        painelPersonagem.setBounds(0, 40, 180, 290);
 
         jLabel10.setFont(new java.awt.Font("Georgia", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(60, 63, 65));
@@ -418,18 +417,19 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
         TelaPersonagem t5 = new TelaPersonagem(chaveUsuario);
         t5.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-        p.setNomeP(lista.get(i).getNomeP());
-        
-        MostrarNome.setText(p.getNomeP());
-        i++;
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -479,7 +479,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
     private javax.swing.JButton ant;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -503,9 +504,6 @@ public class TelaInicial1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JLabel labelAlterar;
-    private javax.swing.JLabel labelCriar;
-    private javax.swing.JLabel labelExcluir;
     private javax.swing.JPanel painelPersonagem;
     private javax.swing.JButton prox;
     private javax.swing.JButton sair;
