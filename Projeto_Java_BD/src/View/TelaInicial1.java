@@ -38,14 +38,6 @@ public class TelaInicial1 extends javax.swing.JFrame {
         initComponents();
         
         this.lista = this.p.mostrarPersonagem();
-<<<<<<< HEAD
-        p.setNomeP(lista.get(0).getNomeP());
-        MostrarNome.setText(p.getNomeP());
-        p.setIdade(lista.get(0).getIdade());
-        MostrarIdade.setText(p.getIdade());
-        initImage();
-=======
-        
         if(lista.size()!=0){
             p.setNomeP(lista.get(0).getNomeP());
             MostrarNome.setText(p.getNomeP());
@@ -54,17 +46,11 @@ public class TelaInicial1 extends javax.swing.JFrame {
             initImage();
         }
        
->>>>>>> 4674313f142fb8da18bf1429e00191c5e5c214ce
     }
 
     
      void initImage(){    
-         
-<<<<<<< HEAD
-         for(int j = 0; j < 6 j++){
-=======
          for(int j = 0; j < lista.size(); j++){
->>>>>>> 4674313f142fb8da18bf1429e00191c5e5c214ce
             int s = lista.get(j).corpo.getNumeroO();
             Icon icon = new ImageIcon("src/img/#"+s+".png");
             JLabel label = new JLabel(icon);

@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/E:/Projeto_Java_BD/Projeto_Java_BD/src/projeto_java_bd/Usuario.java</file>
             <file>file:/E:/Projeto_Java_BD/Projeto_Java_BD/src/DAO/UsuarioDAO.java</file>
             <file>file:/E:/Projeto_Java_BD/Projeto_Java_BD/src/View/TelaPersonagem.java</file>
@@ -17,24 +16,6 @@
             <file>file:/E:/Projeto_Java_BD/Projeto_Java_BD/src/projeto_java_bd/Projeto_Java_BD.java</file>
             <file>file:/E:/Projeto_Java_BD/Projeto_Java_BD/src/DAO/ConexaoDAO.java</file>
             <file>file:/E:/Projeto_Java_BD/Projeto_Java_BD/src/View/TelaLogin.java</file>
-=======
-<<<<<<< HEAD
-            <file>file:/C:/Users/Nicole%20Escobar/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/DAO/CorpoDAO.java</file>
-            <file>file:/C:/Users/Nicole%20Escobar/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/projeto_java_bd/Corpo.java</file>
-            <file>file:/C:/Users/Nicole%20Escobar/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/projeto_java_bd/Personagem.java</file>
-            <file>file:/C:/Users/Nicole%20Escobar/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/DAO/PersonagemDAO.java</file>
-            <file>file:/C:/Users/Nicole%20Escobar/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/View/TelaPersonagem.java</file>
-            <file>file:/C:/Users/Nicole%20Escobar/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/DAO/ConexaoDAO.java</file>
-=======
-            <file>file:/C:/Users/Henrique%20Alves/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/DAO/PersonagemDAO.java</file>
-            <file>file:/C:/Users/Henrique%20Alves/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/View/TelaInicial1.java</file>
-            <file>file:/C:/Users/Henrique%20Alves/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/projeto_java_bd/Personagem.java</file>
-            <file>file:/C:/Users/Henrique%20Alves/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/View/TelaMostrar.java</file>
-            <file>file:/C:/Users/Henrique%20Alves/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/View/TelaPersonagem.java</file>
-            <file>file:/C:/Users/Henrique%20Alves/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/View/TelaLogin.java</file>
-            <file>file:/C:/Users/Henrique%20Alves/Desktop/Projeto_Java_BD/Projeto_Java_BD/src/DAO/ConexaoDAO.java</file>
->>>>>>> 6dfea8bcd886e9976edd043618f8617c45023cf3
->>>>>>> 4674313f142fb8da18bf1429e00191c5e5c214ce
         </group>
     </open-files>
 </project-private>
