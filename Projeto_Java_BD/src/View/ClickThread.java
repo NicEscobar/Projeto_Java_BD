@@ -37,7 +37,7 @@ public class ClickThread extends Thread {
     {
         AudioInputStream inputStream;
         try {
-        inputStream = AudioSystem.getAudioInputStream(new File("E:\\\\Projeto_Java_BD\\\\Projeto_Java_BD\\\\src\\\\D\\\\click.wav"));
+        inputStream = AudioSystem.getAudioInputStream(new File("src\\D\\click.wav"));
         Clip clip = AudioSystem.getClip();
         clip.open(inputStream);
         clip.start();

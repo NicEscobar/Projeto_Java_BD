@@ -14,9 +14,18 @@ import java.util.ArrayList;
  */
 public class Instituto {
     
-    String nomeInst, cidade, cursoInst;
+    String nomeInst, cidade, cursoInst,idInst;
     
     InstitutoDAO daoI = new InstitutoDAO();
+
+    public String getIdInst() {
+        return idInst;
+    }
+
+    public void setIdInst(String idInst) {
+        this.idInst = idInst;
+    }
+    
 
     public String getNomeInst() {
         return nomeInst;
@@ -44,6 +53,10 @@ public class Instituto {
     
     public void InserirInstituto(Instituto I){
         daoI.inserirInstituicao(I);
+    }
+    
+    public void alterarInstituto(Instituto I){
+        daoI.alterarInstituto(I);
     }
     
     public ArrayList<Instituto> mostrarInstituto(){

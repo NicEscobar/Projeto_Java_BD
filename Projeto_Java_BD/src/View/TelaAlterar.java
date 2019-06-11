@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import projeto_java_bd.Corpo;
 import projeto_java_bd.Instituto;
 
 import projeto_java_bd.Personagem;
@@ -19,7 +20,7 @@ import projeto_java_bd.Personagem;
  *
  * @author Aguinaldo
  */
-public class TelaInicial1 extends javax.swing.JFrame {
+public class TelaAlterar extends javax.swing.JFrame {
     ClickThread m1 = new ClickThread();
     int i = 1;
     int chaveUsuario;
@@ -34,7 +35,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
     private int contador = 0;
     
         
-    public TelaInicial1(int l) {
+    public TelaAlterar(int l) {
        
         this.chaveUsuario = l;
         initComponents();
@@ -48,7 +49,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
             MostrarIdade.setText(p.getIdade()+"");
             instituto.setNomeInst(null);
             instituto.setNomeInst(listaInstituto.get(0).getNomeInst());
-            MostrarInstituto.setText(instituto.getNomeInst());
+            MostrarNomeInst.setText(instituto.getNomeInst());
             instituto.setCidade(listaInstituto.get(0).getCidade());
             MostrarCidade.setText(instituto.getCidade());
             instituto.setCursoInst(listaInstituto.get(0).getCursoInst());
@@ -92,8 +93,6 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         sair = new javax.swing.JButton();
         prox = new javax.swing.JButton();
@@ -107,13 +106,13 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
-        MostrarIdade = new javax.swing.JLabel();
-        MostrarNome = new javax.swing.JLabel();
-        MostrarInstituto = new javax.swing.JLabel();
-        MostrarCidade = new javax.swing.JLabel();
-        MostrarCurso = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
+        MostrarNome = new javax.swing.JTextField();
+        MostrarIdade = new javax.swing.JTextField();
+        MostrarNomeInst = new javax.swing.JTextField();
+        MostrarCidade = new javax.swing.JTextField();
+        MostrarCurso = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -124,6 +123,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
 
         jLabel2.setText("jLabel2");
 
@@ -144,36 +145,6 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(550, 40, 220, 60);
 
-        jButton1.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(82, 82, 171));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-trash-can-50.png"))); // NOI18N
-        jButton1.setText("DELETAR PERSONAGEM");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(480, 260, 270, 50);
-
-        jButton4.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(82, 82, 171));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-purposeful-man-50.png"))); // NOI18N
-        jButton4.setText("CRIAR PERSONAGEM");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(470, 140, 260, 60);
-
         jButton5.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(82, 82, 171));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-female-user-50.png"))); // NOI18N
@@ -187,7 +158,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(480, 200, 270, 50);
+        jButton5.setBounds(490, 170, 270, 50);
 
         sair.setBackground(new java.awt.Color(234, 234, 234));
         sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-exit-50.png"))); // NOI18N
@@ -286,19 +257,33 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel6.add(jLabel21);
         jLabel21.setBounds(0, 160, 120, 20);
 
-        MostrarIdade.setFont(new java.awt.Font("Minecraft", 1, 12)); // NOI18N
-        jPanel6.add(MostrarIdade);
-        MostrarIdade.setBounds(0, 130, 170, 30);
-
-        MostrarNome.setFont(new java.awt.Font("Minecraft", 1, 12)); // NOI18N
+        MostrarNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MostrarNomeActionPerformed(evt);
+            }
+        });
         jPanel6.add(MostrarNome);
-        MostrarNome.setBounds(0, 90, 160, 20);
-        jPanel6.add(MostrarInstituto);
-        MostrarInstituto.setBounds(0, 200, 210, 20);
+        MostrarNome.setBounds(0, 90, 220, 20);
+
+        MostrarIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MostrarIdadeActionPerformed(evt);
+            }
+        });
+        jPanel6.add(MostrarIdade);
+        MostrarIdade.setBounds(0, 140, 220, 20);
+        jPanel6.add(MostrarNomeInst);
+        MostrarNomeInst.setBounds(0, 200, 220, 20);
         jPanel6.add(MostrarCidade);
-        MostrarCidade.setBounds(0, 244, 220, 20);
+        MostrarCidade.setBounds(0, 250, 220, 20);
         jPanel6.add(MostrarCurso);
-        MostrarCurso.setBounds(0, 294, 220, 20);
+        MostrarCurso.setBounds(0, 300, 220, 20);
+
+        jLabel17.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel17.setText("Curso :");
+        jPanel6.add(jLabel17);
+        jLabel17.setBounds(0, 270, 60, 20);
 
         jLabel20.setBackground(new java.awt.Color(200, 87, 87));
         jLabel20.setFont(new java.awt.Font("Minecraft", 1, 17)); // NOI18N
@@ -306,12 +291,6 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jLabel20.setText("Personagem:");
         jPanel6.add(jLabel20);
         jLabel20.setBounds(0, 40, 130, 30);
-
-        jLabel17.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(82, 82, 171));
-        jLabel17.setText("Curso :");
-        jPanel6.add(jLabel17);
-        jLabel17.setBounds(0, 270, 60, 20);
 
         jLabel15.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(82, 82, 171));
@@ -395,6 +374,14 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel1.add(jLabel19);
         jLabel19.setBounds(10, 50, 40, 14);
 
+        jTextField1.setText("jTextField1");
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(540, 260, 59, 20);
+
+        jTextField2.setText("jTextField2");
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(409, 210, 70, 20);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -447,14 +434,14 @@ public class TelaInicial1 extends javax.swing.JFrame {
            MostrarNome.setText(p.getNomeP());
            MostrarIdade.setText(p.getIdade()+"");
            
-           MostrarInstituto.setText(instituto.getNomeInst());
+           MostrarNomeInst.setText(instituto.getNomeInst());
            MostrarCidade.setText(instituto.getCidade());
            MostrarCurso.setText(instituto.getCursoInst());
            
         
            cardLayout.next(painelPersonagem);
         }
-        
+
         i++;
     }//GEN-LAST:event_proxActionPerformed
 
@@ -464,27 +451,48 @@ public class TelaInicial1 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_sairActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ClickThread m3 = new ClickThread();
-        m3.start();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        ClickThread m4 = new ClickThread();
-        m4.start();
-        TelaPersonagem t5 = new TelaPersonagem(chaveUsuario);
-        t5.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         ClickThread m5 = new ClickThread();
         m5.start();
-        TelaAlterar t6 = new TelaAlterar(chaveUsuario);
-        t6.setVisible(true);
-        this.dispose();
+        
+        boolean sucesso = false;
+        
+        Personagem personagem = new Personagem();
+        Instituto instituto = new Instituto();
+
+            
+        personagem.corpo.setNumeroO(contador);
+        personagem.corpo.inserirCorpo(contador);
+            
+        personagem.setNomeP(MostrarNome.getText());
+       // personagem.setIdade(MostrarIdade.getText());
+
+        personagem.setIdUsuario_Per(chaveUsuario);
+            
+        instituto.setNomeInst(MostrarNomeInst.getText());
+        instituto.setCidade(MostrarCidade.getText());
+        instituto.setCursoInst(MostrarCurso.getText());
+            
+        p.setNomeP(MostrarNome.getText());
+        p.setIdade(MostrarIdade.getText());
+
+        
+        personagem.alterarPersonagem(p);
+        instituto.alterarInstituto(instituto);
+            
+            TelaInicial1 t3 = new TelaInicial1(chaveUsuario);
+            t3.setVisible(true);
+            this.dispose();
+        
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void MostrarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MostrarNomeActionPerformed
+
+    private void MostrarIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarIdadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MostrarIdadeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -503,14 +511,22 @@ public class TelaInicial1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaInicial1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAlterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaInicial1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAlterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaInicial1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAlterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaInicial1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaAlterar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -523,21 +539,19 @@ public class TelaInicial1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaInicial1(0).setVisible(true);
+                new TelaAlterar(0).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel MostrarCidade;
-    private javax.swing.JLabel MostrarCurso;
-    private javax.swing.JLabel MostrarIdade;
-    private javax.swing.JLabel MostrarInstituto;
-    private javax.swing.JLabel MostrarNome;
+    private javax.swing.JTextField MostrarCidade;
+    private javax.swing.JTextField MostrarCurso;
+    private javax.swing.JTextField MostrarIdade;
+    private javax.swing.JTextField MostrarNome;
+    private javax.swing.JTextField MostrarNomeInst;
     private javax.swing.JButton ant;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -562,6 +576,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel painelPersonagem;
     private javax.swing.JButton prox;
     private javax.swing.JButton sair;

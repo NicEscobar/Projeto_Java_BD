@@ -155,10 +155,13 @@ public class PersonagemDAO {
      
             while(rs.next()){
                 Personagem pTemp = new Personagem();
+                pTemp.setIdPersonagem(rs.getInt("idPersonagem"));
                 pTemp.setNomeP(rs.getString("nomePersonagem"));
                 pTemp.setIdade(rs.getString("idadePersonagem"));
                 pTemp.setIdUsuario_Per(rs.getInt("usuario_idUsuario"));
                 pTemp.setIdPers_corpo(rs.getInt("corpo_idCorpo"));
+                
+                
                 int s = rs.getInt("corpo_idCorpo");
                 pTemp.corpo.setNumeroO(pTemp.corpo.buscarCorpo(s));
                
@@ -177,5 +180,38 @@ public class PersonagemDAO {
         
         return lista;
         }
+   
+
+    public boolean alterarPersonagem(Personagem p) {
+       
+       
+       sql = "UPDATE `mydb`.`personagem` SET `nomePersonagem` = ?, `idadePersonagem` = ? WHERE idPersonagem = ? ;";
+
+        
+       con = daoP.connectionToDb();
+       
+       try {
+            
+        //referenciando o objeto pst
+        pst = con.prepareStatement(sql);
+            
+        pst.setString(1, p.getNomeP());
+        pst.setString(2, p.getIdade());
+        pst.setInt(3, p.getIdPersonagem());
+        
+        pst.execute();
+        
+        sucesso = true;
+         
+        } catch (SQLException ex) {
+            
+            System.out.println("Error = " + ex.getMessage());
+           
+        }finally { 
+            
+           daoP.fecharConexao(con,pst);
+        }
+       return sucesso;
     }
 
+}

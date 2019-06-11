@@ -420,10 +420,16 @@ public class TelaPersonagem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviousActionPerformed
-
+        
          cardLayout.previous(mainPanel);
          ClickThread m1 = new ClickThread();
          m1.start();
+         
+         contador--;
+       
+       
+        if(contador < 0)
+           contador = 32;
     }//GEN-LAST:event_btnPreviousActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed

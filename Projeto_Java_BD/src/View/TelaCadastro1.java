@@ -239,7 +239,7 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
         AudioInputStream inputStream;
         try {
-        inputStream = AudioSystem.getAudioInputStream(new File("E:\\\\Projeto_Java_BD\\\\Projeto_Java_BD\\\\src\\\\D\\\\click.wav"));
+        inputStream = AudioSystem.getAudioInputStream(new File("src\\\\D\\\\click.wav"));
         Clip clip = AudioSystem.getClip();
         clip.open(inputStream);
         clip.start();
@@ -288,7 +288,7 @@ public class TelaCadastro1 extends javax.swing.JFrame {
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         AudioInputStream inputStream;
         try {
-        inputStream = AudioSystem.getAudioInputStream(new File("E:\\\\Projeto_Java_BD\\\\Projeto_Java_BD\\\\src\\\\D\\\\click.wav"));
+        inputStream = AudioSystem.getAudioInputStream(new File("src\\\\D\\\\click.wav"));
         Clip clip = AudioSystem.getClip();
         clip.open(inputStream);
         clip.start();

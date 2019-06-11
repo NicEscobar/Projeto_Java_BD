@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import projeto_java_bd.Instituto;
+import projeto_java_bd.Personagem;
 
 /**
  *
@@ -77,6 +78,7 @@ public class InstitutoDAO {
             while(rs.next()){
                 Instituto iTemp = new Instituto();
                 
+                iTemp.setIdInst("idIntituto");
                 iTemp.setNomeInst(rs.getString("nomeInstituto"));
                 iTemp.setCidade(rs.getString("cidade"));
                 iTemp.setCursoInst(rs.getString("cursoInstituto"));
@@ -97,5 +99,36 @@ public class InstitutoDAO {
         return lista;
         }
     
+        public void alterarInstituto(Instituto i) {
+       
+       
+       sql = "UPDATE `mydb`.`instituto` SET `nomeIntituto` = ?, `cidade` = ?, `curso` = ? WHERE idIntituto = ? ;";
+
+        
+       con = daoI.connectionToDb();
+       
+       try {
+            
+        //referenciando o objeto pst
+        pst = con.prepareStatement(sql);
+            
+        pst.setString(1, i.getNomeInst());
+        pst.setString(2, i.getCidade());
+        pst.setString(3, i.getCursoInst());
+        pst.setString(3, i.getIdInst());
+        
+        pst.execute();
+        
+         
+        } catch (SQLException ex) {
+            
+            System.out.println("Error = " + ex.getMessage());
+           
+        }finally { 
+            
+           daoI.fecharConexao(con,pst);
+        }
+    }
+
     
 }

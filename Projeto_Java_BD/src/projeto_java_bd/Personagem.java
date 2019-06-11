@@ -14,8 +14,16 @@ import java.util.ArrayList;
  */
 public class Personagem {
       
-    private String nomeP, idade;
-    private int idUsuario_Per,idPers_corpo;
+    private String nomeP,idade;
+    private int idUsuario_Per,idPers_corpo,idPersonagem;
+
+    public int getIdPersonagem() {
+        return idPersonagem;
+    }
+
+    public void setIdPersonagem(int idPersonagem) {
+        this.idPersonagem = idPersonagem;
+    }
     
     PersonagemDAO daoP = new PersonagemDAO();
     
@@ -67,6 +75,12 @@ public class Personagem {
     public boolean inserirPersonagem(Personagem p){
         
         return daoP.inserirPersonagem(p);
+        
+    };
+    
+    public boolean alterarPersonagem(Personagem p){
+        
+        return daoP.alterarPersonagem(p);
         
     };
     
