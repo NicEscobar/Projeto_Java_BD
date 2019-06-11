@@ -95,6 +95,34 @@ public class InstitutoDAO {
         
         return lista;
         }
+        
+        public void deletarInstituto (int id) {
+       
+        
+        sql = "delete from instituto where idInstituto = ?;";
+       
+       
+        con = daoI.connectionToDb();
+
+        try {
+            //referenciando o objeto pst
+           pst = con.prepareStatement(sql);
+            
+           pst.setInt(1, id);
+           
+            pst.execute();
+            
+
+        } catch (SQLException ex) {
+            System.out.println("Error = " + ex.getMessage());
+          
+        } 
+        
+        finally {
+            
+          daoI.fecharConexao(con, pst);
+        }  
+    }
     
     
 }

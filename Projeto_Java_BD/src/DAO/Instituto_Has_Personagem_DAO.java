@@ -10,7 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import projeto_java_bd.Usuario;
 
 /**
  *
@@ -49,9 +48,10 @@ public class Instituto_Has_Personagem_DAO {
         
         st = con.createStatement();
         rs = st.executeQuery(chaveCI);
+  
         
-        chaveI = rs.getInt("idInstituto");
-        chaveP =  rs.getInt("idPersonagem");
+        chaveI = rs.getInt(1);
+        //chaveP =  rs.getInt("MAX(idPersonagem)");
         
         pst.setInt(1, chaveI);
         pst.setInt(2, chaveP);

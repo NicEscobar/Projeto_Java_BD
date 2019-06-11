@@ -197,6 +197,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroActionPerformed
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
+        ClickThread m1 = new ClickThread();
         m1.start();
         Usuario usuario = new Usuario();
         boolean acheiUsuario = false;

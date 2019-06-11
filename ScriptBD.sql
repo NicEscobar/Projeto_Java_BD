@@ -73,13 +73,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`personagem` (
   CONSTRAINT `fk_personagem_usuario1`
     FOREIGN KEY (`usuario_idUsuario`)
     REFERENCES `mydb`.`usuario` (`idUsuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_personagem_corpo1`
     FOREIGN KEY (`corpo_idCorpo`)
     REFERENCES `mydb`.`corpo` (`idCorpo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 

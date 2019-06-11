@@ -15,6 +15,14 @@ import java.util.ArrayList;
 public class Personagem {
       
     private String nomeP, idade;
+    private int idPersonagem;
+    public int getIdPersonagem() {
+        return idPersonagem;
+    }
+
+    public void setIdPersonagem(int idPersonagem) {
+        this.idPersonagem = idPersonagem;
+    }
     private int idUsuario_Per,idPers_corpo;
     
     PersonagemDAO daoP = new PersonagemDAO();

@@ -33,7 +33,7 @@ public class Corpo {
     
     public void deletarCorpo(int id){
         
-        //daoC.deletarPersonagem(id);
+        daoC.deletarCorpo(id);
         
     };
     

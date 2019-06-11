@@ -13,6 +13,10 @@ insert into instituto (nomeInstituto,cidade,cursoInstituto) values ("ina","sant"
 insert into instituto_has_personagem(instituto_idInstituto,personagem_idPersonagem) values((select MAX(idInstituto) FROM instituto,(select MAX(idPersonagem) FROM personagem)));
 insert into instituto_has_personagem(personagem_idPersonagem) values((select MAX(idPersonagem) FROM personagem));
 
+insert into instituto_has_personagem(personagem_idPersonagem,instituto_idInstituto) values((select MAX(idPersonagem) FROM personagem),(select MAX(idInstituto) FROM instituto));
+
+delete from personagem where idPersonagem = 1;
+
 select MAX(idInstituto) FROM instituto;
 select MAX(idPersonagem) FROM personagem;
 
