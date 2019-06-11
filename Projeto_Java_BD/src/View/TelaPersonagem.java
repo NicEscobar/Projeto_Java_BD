@@ -16,7 +16,7 @@ import javax.swing.JLabel;
 import projeto_java_bd.Personagem;
 import projeto_java_bd.Corpo;
 import projeto_java_bd.Instituto;
-import projeto_java_bd.Usuario;
+import projeto_java_bd.Instituto_Has_Personagem;
 
 /**
  *
@@ -28,6 +28,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private int contador = 0;
     private List<Corpo> listaCorpos = new ArrayList<>();
     Personagem personagem = new Personagem();
+    Instituto_Has_Personagem ip = new Instituto_Has_Personagem();
     
     int chaveUsuario;
     
@@ -463,6 +464,8 @@ public class TelaPersonagem extends javax.swing.JFrame {
             
             personagem.inserirPersonagem(personagem);
             instituto.InserirInstituto(instituto);
+            ip.inserirIHasP();
+            
             
             TelaInicial1 t3 = new TelaInicial1(chaveUsuario);
             t3.setVisible(true);

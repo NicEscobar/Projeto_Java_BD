@@ -28,7 +28,7 @@ public class InstitutoDAO {
     public ResultSet rs;
     
      String sql;
-     String chaveCI, chaveCP;
+
     
     ConexaoDAO daoI = new ConexaoDAO();
     //Função para inserir um usuário no banco de dados
@@ -36,8 +36,7 @@ public class InstitutoDAO {
     public void inserirInstituicao(Instituto i) {
        
        sql = "INSERT INTO instituto (nomeInstituto, cidade, cursoInstituto) VALUES (?, ?, ?);";
-       chaveCI = "select MAX(idInstituto) FROM instituto;";
-       chaveCP = "select MAX(idPersonagem) FROM personagem;";
+       
                
        con = daoI.connectionToDb();
        
