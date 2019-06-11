@@ -25,6 +25,7 @@ import javax.swing.JLabel;
 import projeto_java_bd.Personagem;
 import projeto_java_bd.Corpo;
 import projeto_java_bd.Instituto;
+import projeto_java_bd.Objeto;
 import projeto_java_bd.Usuario;
 
 /**
@@ -34,8 +35,10 @@ import projeto_java_bd.Usuario;
 public class TelaPersonagem extends javax.swing.JFrame {
 
     private CardLayout cardLayout;
+    private CardLayout cardLayout1;
     private int contador = 0;
     private List<Corpo> listaCorpos = new ArrayList<>();
+    private List<Objeto> listaComp = new ArrayList<>();
     Personagem personagem = new Personagem();
     int chaveUsuario;
     
@@ -44,6 +47,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         this.chaveUsuario = l;
         initComponents();
         initImage();
+        initComponent();
     }
 
     void initImage(){    
@@ -74,7 +78,27 @@ public class TelaPersonagem extends javax.swing.JFrame {
         for (int i = 0; i < listaCorpos.size(); i++) {
             cardLayout.next(mainPanel);
             
+        }        
+    }
+    void initComponent(){
+        //Componentes
+        String[] filesName1 = {"C1.png","C2.png","C3.png","C4.png"};
+        
+        for(String s : filesName1){
+            
+            Icon icon1 = new ImageIcon("src/Componentes/"+s);
+            JLabel label1 = new JLabel(icon1);
+            Objeto comp = new Objeto();
+            listaComp.add(comp);
+            PainelComponente.add(label1);
         }
+        //create layout
+        cardLayout1=new CardLayout();
+        PainelComponente.setLayout(cardLayout1);
+        for (int i = 0; i < listaComp.size(); i++) {
+            cardLayout1.next(PainelComponente);
+            
+        }  
     }
     
     @SuppressWarnings("unchecked")
@@ -86,7 +110,9 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         sair = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
+        btnPrevious1 = new javax.swing.JButton();
         btnPrevious = new javax.swing.JButton();
+        btnNext1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -112,6 +138,8 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         criar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -155,7 +183,24 @@ public class TelaPersonagem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnNext);
-        btnNext.setBounds(650, 140, 110, 50);
+        btnNext.setBounds(650, 150, 110, 50);
+
+        btnPrevious1.setBackground(new java.awt.Color(234, 234, 234));
+        btnPrevious1.setFont(new java.awt.Font("Minecraft", 1, 16)); // NOI18N
+        btnPrevious1.setForeground(new java.awt.Color(25, 24, 28));
+        btnPrevious1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-move-left-female-50.png"))); // NOI18N
+        btnPrevious1.setText("ANT.");
+        btnPrevious1.setBorder(null);
+        btnPrevious1.setBorderPainted(false);
+        btnPrevious1.setContentAreaFilled(false);
+        btnPrevious1.setFocusPainted(false);
+        btnPrevious1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrevious1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnPrevious1);
+        btnPrevious1.setBounds(540, 260, 100, 50);
 
         btnPrevious.setBackground(new java.awt.Color(234, 234, 234));
         btnPrevious.setFont(new java.awt.Font("Minecraft", 1, 16)); // NOI18N
@@ -172,7 +217,24 @@ public class TelaPersonagem extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnPrevious);
-        btnPrevious.setBounds(550, 140, 100, 50);
+        btnPrevious.setBounds(540, 150, 100, 50);
+
+        btnNext1.setBackground(new java.awt.Color(234, 234, 234));
+        btnNext1.setFont(new java.awt.Font("Minecraft", 1, 16)); // NOI18N
+        btnNext1.setForeground(new java.awt.Color(25, 24, 28));
+        btnNext1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-move-right-male-50.png"))); // NOI18N
+        btnNext1.setText("PROX.");
+        btnNext1.setBorder(null);
+        btnNext1.setBorderPainted(false);
+        btnNext1.setContentAreaFilled(false);
+        btnNext1.setFocusPainted(false);
+        btnNext1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNext1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnNext1);
+        btnNext1.setBounds(650, 260, 110, 50);
 
         jLabel1.setFont(new java.awt.Font("Minecraft", 3, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 24, 28));
@@ -192,15 +254,15 @@ public class TelaPersonagem extends javax.swing.JFrame {
         PainelComponente.setLayout(PainelComponenteLayout);
         PainelComponenteLayout.setHorizontalGroup(
             PainelComponenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 180, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
         );
         PainelComponenteLayout.setVerticalGroup(
             PainelComponenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
         );
 
         jPanel5.add(PainelComponente);
-        PainelComponente.setBounds(0, 0, 180, 330);
+        PainelComponente.setBounds(100, 250, 80, 80);
 
         mainPanel.setOpaque(false);
 
@@ -373,6 +435,18 @@ public class TelaPersonagem extends javax.swing.JFrame {
         jPanel1.add(jPanel4);
         jPanel4.setBounds(488, 403, 599, 262);
 
+        jLabel5.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(25, 24, 28));
+        jLabel5.setText("Aparencia:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(550, 120, 180, 20);
+
+        jLabel4.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(25, 24, 28));
+        jLabel4.setText("Componente Favorito:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(550, 234, 180, 20);
+
         jLabel7.setBackground(new java.awt.Color(82, 82, 171));
         jLabel7.setFont(new java.awt.Font("Minecrafter Alt", 3, 53)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(82, 82, 171));
@@ -420,10 +494,12 @@ public class TelaPersonagem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreviousActionPerformed
-
-         cardLayout.previous(mainPanel);
          ClickThread m1 = new ClickThread();
-         m1.start();
+         m1.start();    
+         cardLayout.previous(mainPanel);
+         contador--;
+        if(contador < 0)
+           contador = 31;
     }//GEN-LAST:event_btnPreviousActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
@@ -432,11 +508,7 @@ public class TelaPersonagem extends javax.swing.JFrame {
         ClickThread m2 = new ClickThread();
         m2.start();
         cardLayout.next(mainPanel);
-        // contador = 5
         contador++;
-       
-        // lista = 5
-        // contador = 6
         if(contador > listaCorpos.size())
            contador = 0;
        
@@ -505,6 +577,16 @@ public class TelaPersonagem extends javax.swing.JFrame {
         
     }//GEN-LAST:event_criarActionPerformed
 
+    private void btnNext1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNext1ActionPerformed
+        // TODO add your handling code here:
+        cardLayout1.next(PainelComponente);
+    }//GEN-LAST:event_btnNext1ActionPerformed
+
+    private void btnPrevious1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrevious1ActionPerformed
+        // TODO add your handling code here:
+        cardLayout1.previous(PainelComponente);
+    }//GEN-LAST:event_btnPrevious1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -558,7 +640,9 @@ public class TelaPersonagem extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PainelComponente;
     private javax.swing.JButton btnNext;
+    private javax.swing.JButton btnNext1;
     private javax.swing.JButton btnPrevious;
+    private javax.swing.JButton btnPrevious1;
     private javax.swing.JTextField cidadeInstituto;
     private javax.swing.JButton criar;
     private javax.swing.JTextField cursoInstituto;
@@ -578,6 +662,8 @@ public class TelaPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
