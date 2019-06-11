@@ -29,7 +29,7 @@ public class InstitutoDAO {
     public ResultSet rs;
     
      String sql;
-     String chaveCI, chaveCP;
+
     
     ConexaoDAO daoI = new ConexaoDAO();
     //Função para inserir um usuário no banco de dados
@@ -37,8 +37,7 @@ public class InstitutoDAO {
     public void inserirInstituicao(Instituto i) {
        
        sql = "INSERT INTO instituto (nomeInstituto, cidade, cursoInstituto) VALUES (?, ?, ?);";
-       chaveCI = "select MAX(idInstituto) FROM instituto;";
-       chaveCP = "select MAX(idPersonagem) FROM personagem;";
+       
                
        con = daoI.connectionToDb();
        
@@ -98,6 +97,34 @@ public class InstitutoDAO {
         
         return lista;
         }
+        
+        public void deletarInstituto (int id) {
+       
+        
+        sql = "delete from instituto where idInstituto = ?;";
+       
+       
+        con = daoI.connectionToDb();
+
+        try {
+            //referenciando o objeto pst
+           pst = con.prepareStatement(sql);
+            
+           pst.setInt(1, id);
+           
+            pst.execute();
+            
+
+        } catch (SQLException ex) {
+            System.out.println("Error = " + ex.getMessage());
+          
+        } 
+        
+        finally {
+            
+          daoI.fecharConexao(con, pst);
+        }  
+    }
     
         public void alterarInstituto(Instituto i) {
        

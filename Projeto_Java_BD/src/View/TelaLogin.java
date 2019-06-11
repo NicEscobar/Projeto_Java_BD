@@ -190,6 +190,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastroActionPerformed
+        ClickThread m1 = new ClickThread();
         m1.start();
         TelaCadastro1 t2 = new TelaCadastro1();
         t2.setVisible(true);
@@ -197,6 +198,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_cadastroActionPerformed
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
+        ClickThread m1 = new ClickThread();
         m1.start();
         Usuario usuario = new Usuario();
         boolean acheiUsuario = false;

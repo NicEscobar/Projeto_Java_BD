@@ -21,7 +21,7 @@ import projeto_java_bd.Personagem;
  */
 public class TelaInicial1 extends javax.swing.JFrame {
     ClickThread m1 = new ClickThread();
-    int i = 1;
+    int i = 0;
     int chaveUsuario;
     ActionListener cmd1_clk;
     ArrayList<Personagem> lista = new ArrayList<>();
@@ -42,6 +42,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         this.listaInstituto = this.instituto.mostrarInstituto();
         
         if(!lista.isEmpty()){
+            
             p.setNomeP(lista.get(0).getNomeP());
             MostrarNome.setText(p.getNomeP());
             p.setIdade(lista.get(0).getIdade());
@@ -59,7 +60,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }
 
     
-     void initImage(){    
+     void initImage(){ 
+         
          for(int j = 0; j < lista.size(); j++){
             int s = lista.get(j).corpo.getNumeroO();
             Icon icon = new ImageIcon("src/img/#"+s+".png");
@@ -413,6 +415,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
     private void antActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_antActionPerformed
         ClickThread m1 = new ClickThread();
         m1.start();
+
         for (int i = 0; i < lista.size(); i++) {
             cardLayout.next(painelPersonagem);
             
@@ -429,15 +432,35 @@ public class TelaInicial1 extends javax.swing.JFrame {
         
         i++;
         
+        if(!lista.isEmpty()){
+            for (int i = 0; i < lista.size(); i++) {
+                cardLayout.next(painelPersonagem);
+
+            } 
+            if (i >= lista.size())
+                i = 0;
+            
+            p = lista.get(i);
+            
+            MostrarNome.setText(p.getNomeP());
+            MostrarIdade.setText(p.getIdade());
+
+            cardLayout.previous(painelPersonagem);
+
+            i++;
+        }
+        
     }//GEN-LAST:event_antActionPerformed
 
     private void proxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proxActionPerformed
         ClickThread m2 = new ClickThread();
         m2.start();
+        
         for (int i = 0; i < lista.size(); i++) {
             cardLayout.next(painelPersonagem);
             
         } 
+
         if (i >= lista.size())
             i = 0;
         if(!lista.isEmpty()){
@@ -456,6 +479,28 @@ public class TelaInicial1 extends javax.swing.JFrame {
         }
         
         i++;
+       
+         if(!lista.isEmpty()){
+            
+             if (i > lista.size())
+                i = 0;
+
+            p = lista.get(i);
+            instituto = listaInstituto.get(i);
+
+               MostrarNome.setText(p.getNomeP());
+               MostrarIdade.setText(p.getIdade());
+
+               MostrarInstituto.setText(instituto.getNomeInst());
+               MostrarCidade.setText(instituto.getCidade());
+               MostrarCurso.setText(instituto.getCursoInst());
+
+
+               cardLayout.next(painelPersonagem);
+
+                i++;
+         }
+
     }//GEN-LAST:event_proxActionPerformed
 
     private void sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sairActionPerformed
@@ -465,8 +510,27 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       
         ClickThread m3 = new ClickThread();
         m3.start();
+        
+        if(!lista.isEmpty()){
+            
+            int id = lista.get(i).getIdPersonagem();
+
+            p.corpo.deletarCorpo(id);
+            instituto.deletarInstituto(id);
+            p.deletarPersonagem(id);
+
+            this.lista = this.p.mostrarPersonagem();
+
+            this.dispose();
+            TelaInicial1.main();
+        }
+        
+        
+         
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -489,7 +553,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -53,19 +53,19 @@ public class CorpoDAO {
         
     }
      
-     public void deletarPersonagem (Corpo c) {
+     public void deletarCorpo (int id) {
        
         
-        sql = "DELETE from usuario where idUsuario = ?";
+        sql = "DELETE from corpo where idCorpo = ?";
        
        
-        daoC.connectionToDb();
+        con = daoC.connectionToDb();
 
         try {
             //referenciando o objeto pst
            pst = con.prepareStatement(sql);
             
-           //pst.setInt(1, u.get);
+           pst.setInt(1, id);
            
             pst.execute();
             

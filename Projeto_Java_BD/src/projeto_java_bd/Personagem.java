@@ -14,6 +14,7 @@ import java.util.ArrayList;
  */
 public class Personagem {
       
+
     private String nomeP,idade;
     private int idUsuario_Per,idPers_corpo,idPersonagem;
 

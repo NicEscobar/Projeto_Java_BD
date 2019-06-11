@@ -11,7 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import projeto_java_bd.Personagem;
-import projeto_java_bd.Usuario;
 
 public class PersonagemDAO {
     
@@ -63,16 +62,16 @@ public class PersonagemDAO {
        public void deletarPersonagem (int id) {
        
         
-        sql = "DELETE from personagem where idUsuario = ?";
+        sql = "delete from personagem where idPersonagem = ?;";
        
        
-        daoP.connectionToDb();
+        con = daoP.connectionToDb();
 
         try {
             //referenciando o objeto pst
            pst = con.prepareStatement(sql);
             
-           //pst.setInt(1, u.get);
+           pst.setInt(1, id);
            
             pst.execute();
             
@@ -116,15 +115,7 @@ public class PersonagemDAO {
                 bdValue = rs.getBigDecimal("numeroOrdem");
                 valueOf = Integer.valueOf(bdValue.intValue());
            }
-             /*
-             while(rs.next())
-             {
-             String emailBanco = rs.getString("email");
-             String senhaBanco = rs.getString("senha");
-             if((emailBanco.equals(u.getEmail()))&&(senhaBanco.equals(u.getSenha()))){
-             //    return true;
-             }
-             }    */
+       
             
         } catch (SQLException ex) {
             
@@ -147,7 +138,6 @@ public class PersonagemDAO {
         con = daoP.connectionToDb();
         
         String sql = "select * from personagem;";
-        String sql1 = "select * from personagem;";
         
         try {
             st = con.createStatement();

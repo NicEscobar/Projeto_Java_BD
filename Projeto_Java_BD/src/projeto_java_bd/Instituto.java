@@ -63,7 +63,9 @@ public class Instituto {
         
         return daoI.mostrarInstituto();
     }
-    
+    public void deletarInstituto(int id){
+        daoI.deletarInstituto(id);
+    }
     
     
 }

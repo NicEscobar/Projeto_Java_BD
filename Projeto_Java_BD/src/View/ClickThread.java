@@ -5,13 +5,8 @@
  */
 package View;
 import java.io.File;
-import java.io.FileInputStream;
-
-import java.io.FileNotFoundException;
 
 import java.io.IOException;
-
-import java.io.InputStream;
 
 import java.util.logging.Level;
 
@@ -21,23 +16,15 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import sun.audio.AudioData;
 
-import sun.audio.AudioPlayer;
 
-import sun.audio.AudioStream;
-import sun.audio.ContinuousAudioDataStream;
-/**
- *
- * @author Aguinaldo
- */
 public class ClickThread extends Thread {
     @Override
     public void run()
     {
         AudioInputStream inputStream;
         try {
-        inputStream = AudioSystem.getAudioInputStream(new File("src\\D\\click.wav"));
+        inputStream = AudioSystem.getAudioInputStream(new File("src\\\\D\\\\click.wav"));
         Clip clip = AudioSystem.getClip();
         clip.open(inputStream);
         clip.start();

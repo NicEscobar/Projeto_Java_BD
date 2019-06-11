@@ -37,6 +37,7 @@ public class MusicThread extends Thread {
     {
         AudioInputStream inputStream;
         try {
+
         inputStream = AudioSystem.getAudioInputStream(new File("src\\D\\Minecraft.wav"));
         Clip clip = AudioSystem.getClip();
         clip.open(inputStream);
