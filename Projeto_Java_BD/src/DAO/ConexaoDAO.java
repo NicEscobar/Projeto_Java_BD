@@ -21,7 +21,7 @@ public class ConexaoDAO {
     public Connection con;
  
     //private static final String DRIVER = "com.mysql.jdbc.Driver"; //Caminho da classe Driver, que esta na biblioteca com.mysql.jdbc
-    private static final String URL = "jdbc:mysql://localhost:3306/mydb"+ "?useTimezone=true&serverTimezone=UTC&useSSL=false"; //colocar o nome do banco
+    private static final String URL = "jdbc:mysql://localhost:3305/mydb"+ "?useTimezone=true&serverTimezone=UTC&useSSL=false"; //colocar o nome do banco
     private static final String USER = "root";
     private static final String PASS = "root";
     

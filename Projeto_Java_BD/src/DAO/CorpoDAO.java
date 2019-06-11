@@ -38,7 +38,7 @@ public class CorpoDAO {
         //referenciando o objeto pst
         pst = con.prepareStatement(sql);
             
-        pst.setInt(1, numOrdem);
+        pst.setInt(1, numOrdem+1);
         
          pst.execute();
          

@@ -20,6 +20,7 @@ import projeto_java_bd.Personagem;
  * @author Aguinaldo
  */
 public class TelaInicial1 extends javax.swing.JFrame {
+    ClickThread m1 = new ClickThread();
     int i = 1;
     int chaveUsuario;
     ActionListener cmd1_clk;
@@ -76,7 +77,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
         for (int i = 0; i < lista.size(); i++) {
             cardLayout.next(painelPersonagem);
             
-        }
+        } 
+        
         
         cardLayout.show(painelPersonagem, "src/img/"+p.corpo.getNumeroO()+".png");
        
@@ -89,13 +91,13 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         sair = new javax.swing.JButton();
         prox = new javax.swing.JButton();
         ant = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -128,14 +130,21 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Acesso");
+        setTitle("Menu");
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(21, 21, 21));
         jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 255, 255)));
         jPanel1.setLayout(null);
 
-        jButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel7.setBackground(new java.awt.Color(82, 82, 171));
+        jLabel7.setFont(new java.awt.Font("Minecrafter Alt", 3, 50)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(82, 82, 171));
+        jLabel7.setText("INATEL");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(550, 40, 220, 60);
+
+        jButton1.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(82, 82, 171));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-trash-can-50.png"))); // NOI18N
         jButton1.setText("DELETAR PERSONAGEM");
@@ -148,9 +157,9 @@ public class TelaInicial1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(480, 260, 260, 50);
+        jButton1.setBounds(480, 260, 270, 50);
 
-        jButton4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(82, 82, 171));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-purposeful-man-50.png"))); // NOI18N
         jButton4.setText("CRIAR PERSONAGEM");
@@ -165,7 +174,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel1.add(jButton4);
         jButton4.setBounds(470, 140, 260, 60);
 
-        jButton5.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jButton5.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(82, 82, 171));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-female-user-50.png"))); // NOI18N
         jButton5.setText("ALTERAR PERSONAGEM");
@@ -178,7 +187,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton5);
-        jButton5.setBounds(480, 200, 260, 50);
+        jButton5.setBounds(480, 200, 270, 50);
 
         sair.setBackground(new java.awt.Color(234, 234, 234));
         sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-exit-50.png"))); // NOI18N
@@ -192,7 +201,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         sair.setBounds(730, 0, 40, 40);
 
         prox.setBackground(new java.awt.Color(234, 234, 234));
-        prox.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        prox.setFont(new java.awt.Font("Minecraft", 1, 16)); // NOI18N
         prox.setForeground(new java.awt.Color(25, 24, 28));
         prox.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-move-right-male-50.png"))); // NOI18N
         prox.setText("PROX.");
@@ -209,7 +218,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
         prox.setBounds(650, 310, 110, 50);
 
         ant.setBackground(new java.awt.Color(234, 234, 234));
-        ant.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        ant.setFont(new java.awt.Font("Minecraft", 1, 16)); // NOI18N
         ant.setForeground(new java.awt.Color(25, 24, 28));
         ant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-move-left-female-50.png"))); // NOI18N
         ant.setText("ANT.");
@@ -225,15 +234,11 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel1.add(ant);
         ant.setBounds(540, 310, 100, 50);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/fonte (1)1.png"))); // NOI18N
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(540, 40, 251, 41);
-
-        jLabel1.setFont(new java.awt.Font("Georgia", 3, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Minecraft", 3, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(25, 24, 28));
         jLabel1.setText("Projeto de Java e MySQL");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(550, 90, 170, 20);
+        jLabel1.setBounds(560, 90, 180, 20);
 
         jPanel3.setBackground(new java.awt.Color(234, 255, 91));
         jPanel3.setLayout(null);
@@ -257,17 +262,17 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel5.add(painelPersonagem);
         painelPersonagem.setBounds(0, 40, 180, 290);
 
-        jLabel10.setFont(new java.awt.Font("Georgia", 1, 20)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Minecraft", 1, 20)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(60, 63, 65));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-people-50.png"))); // NOI18N
-        jLabel10.setText("Aparência");
+        jLabel10.setText("Aparencia");
         jPanel5.add(jLabel10);
         jLabel10.setBounds(0, 0, 170, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/19e30add-7434-40f0-a0e0-5bbff8db1a82.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         jPanel5.add(jLabel3);
-        jLabel3.setBounds(-40, -10, 300, 360);
+        jLabel3.setBounds(-50, -10, 300, 360);
 
         jPanel3.add(jPanel5);
         jPanel5.setBounds(20, 40, 180, 330);
@@ -275,17 +280,17 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(234, 234, 234));
         jPanel6.setLayout(null);
 
-        jLabel21.setFont(new java.awt.Font("Georgia", 1, 17)); // NOI18N
+        jLabel21.setFont(new java.awt.Font("Minecraft", 1, 17)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(200, 87, 87));
-        jLabel21.setText("Instituição:");
+        jLabel21.setText("Instituicao:");
         jPanel6.add(jLabel21);
         jLabel21.setBounds(0, 160, 120, 20);
 
-        MostrarIdade.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        MostrarIdade.setFont(new java.awt.Font("Minecraft", 1, 12)); // NOI18N
         jPanel6.add(MostrarIdade);
         MostrarIdade.setBounds(0, 130, 170, 30);
 
-        MostrarNome.setFont(new java.awt.Font("Georgia", 1, 12)); // NOI18N
+        MostrarNome.setFont(new java.awt.Font("Minecraft", 1, 12)); // NOI18N
         jPanel6.add(MostrarNome);
         MostrarNome.setBounds(0, 90, 160, 20);
         jPanel6.add(MostrarInstituto);
@@ -296,46 +301,46 @@ public class TelaInicial1 extends javax.swing.JFrame {
         MostrarCurso.setBounds(0, 294, 220, 20);
 
         jLabel20.setBackground(new java.awt.Color(200, 87, 87));
-        jLabel20.setFont(new java.awt.Font("Georgia", 1, 17)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Minecraft", 1, 17)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(200, 87, 87));
         jLabel20.setText("Personagem:");
         jPanel6.add(jLabel20);
-        jLabel20.setBounds(0, 40, 120, 30);
+        jLabel20.setBounds(0, 40, 130, 30);
 
-        jLabel17.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(82, 82, 171));
         jLabel17.setText("Curso :");
         jPanel6.add(jLabel17);
         jLabel17.setBounds(0, 270, 60, 20);
 
-        jLabel15.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(82, 82, 171));
         jLabel15.setText("Nome:");
         jPanel6.add(jLabel15);
         jLabel15.setBounds(0, 180, 86, 20);
 
-        jLabel16.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(82, 82, 171));
         jLabel16.setText("Cidade:");
         jPanel6.add(jLabel16);
         jLabel16.setBounds(0, 220, 100, 30);
 
-        jLabel14.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(82, 82, 171));
         jLabel14.setText("Idade:");
         jPanel6.add(jLabel14);
         jLabel14.setBounds(0, 110, 70, 20);
 
-        jLabel13.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Minecraft", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(82, 82, 171));
         jLabel13.setText("Nome:");
         jPanel6.add(jLabel13);
         jLabel13.setBounds(0, 70, 60, 20);
 
-        jLabel12.setFont(new java.awt.Font("Georgia", 1, 20)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Minecraft", 1, 20)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(60, 63, 65));
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/icons8-compose-50.png"))); // NOI18N
-        jLabel12.setText("Informações");
+        jLabel12.setText("Informacoes");
         jPanel6.add(jLabel12);
         jLabel12.setBounds(10, 0, 200, 40);
 
@@ -360,12 +365,12 @@ public class TelaInicial1 extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(3, 3, 480, 388);
+        jPanel2.setBounds(3, 3, 480, 399);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -406,12 +411,31 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void antActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_antActionPerformed
+        ClickThread m1 = new ClickThread();
+        m1.start();
+        for (int i = 0; i < lista.size(); i++) {
+            cardLayout.next(painelPersonagem);
+            
+        } 
+        if (i >= lista.size())
+            i = 0;
+        p = lista.get(i);
+        MostrarNome.setText(p.getNomeP());
+        MostrarIdade.setText(p.getIdade());
         
+        cardLayout.previous(painelPersonagem);
+        
+        i++;
         
     }//GEN-LAST:event_antActionPerformed
 
     private void proxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proxActionPerformed
-         initImage();
+        ClickThread m2 = new ClickThread();
+        m2.start();
+        for (int i = 0; i < lista.size(); i++) {
+            cardLayout.next(painelPersonagem);
+            
+        } 
         if (i >= lista.size())
             i = 0;
         p = lista.get(i);
@@ -425,7 +449,7 @@ public class TelaInicial1 extends javax.swing.JFrame {
            MostrarCurso.setText(instituto.getCursoInst());
            
         
-        cardLayout.next(painelPersonagem);
+           cardLayout.next(painelPersonagem);
         
         i++;
     }//GEN-LAST:event_proxActionPerformed
@@ -437,18 +461,22 @@ public class TelaInicial1 extends javax.swing.JFrame {
     }//GEN-LAST:event_sairActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        ClickThread m3 = new ClickThread();
+        m3.start();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        ClickThread m4 = new ClickThread();
+        m4.start();
         TelaPersonagem t5 = new TelaPersonagem(chaveUsuario);
         t5.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        ClickThread m5 = new ClickThread();
+        m5.start();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
@@ -518,8 +546,8 @@ public class TelaInicial1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
